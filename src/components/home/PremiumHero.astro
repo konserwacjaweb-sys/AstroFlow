@@ -2,75 +2,9 @@
 import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+import leftBg from '@assets/powiekszanie_ust_koscierzyna.jpg';
+import rightBg from '@assets/photo-1451187580459-43490279c0fa.jpg';
 ---
-
-<section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0">
-    <Image 
-      src={heroBgImg}
-      alt="Modern logistics warehouse with advanced automation"
-      class="w-full h-full object-cover"
-      width={2070}
-      height={1380}
-      decoding="async"
-      fetchpriority="high"
-    />
-    <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl">
-      <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
-        </svg>
-        Industry Leading Logistics Solutions
-      </div>
-      
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-        Optimize Your Operations with
-        <span class="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400 mt-2">
-          AstroFlow
-        </span>
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
-        Transform your supply chain with our integrated logistics and manufacturing solutions. 
-        From warehousing to delivery, we power your success with cutting-edge technology.
-      </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <Button href="/rfq" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
-          Request a Quote
-        </Button>
-        <Button href="/capabilities" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
-          Explore Solutions
-        </Button>
-      </div>
-
-      <!-- Quick Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
-        <div class="group">
-          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">500+</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Global Clients</div>
-        </div>
-        <div class="group">
-          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">50M+</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Units Shipped</div>
-        </div>
-        <div class="group">
-          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">99.9%</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">On-Time</div>
-        </div>
-        <div class="group">
-          <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">15+</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Facilities</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -79,4 +13,73 @@ import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
     </svg>
   </div>
 </section>
+
+<!-- nowa sekcja -->
+<section class="w-full m-0 p-0 flex flex-col md:flex-row overflow-hidden h-auto md:h-[600px]">
+  
+  <!-- H1: stały, na środku u góry całej sekcji -->
+  <h1 class="absolute left-1/2 -translate-x-1/2 z-50 text-white text-4xl lg:text-5xl font-extrabold drop-shadow-lg text-center px-4">Top Cosmetic </h1> 
+  
+  <!-- LEWA -->
+  <div class="relative min-w-0 w-full flex-none md:flex-[1] h-[420px] md:h-full
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[1.4]
+              md:hover:z-10 md:hover:shadow-xl group/left">
+    <Image
+      src={leftBg}
+      alt="Background left"
+      class="absolute inset-0 w-full h-full object-cover"
+      width={1200}
+      height={600}
+      decoding="async"
+      fetchpriority="high"
+    />
+
+    <h2 class="absolute top-6 left-1/2 -translate-x-1/2 text-white text-3xl font-bold drop-shadow-lg z-10">
+      Top permanent make up
+    </h2>
+
+    <ul
+      class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+             opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
+             transition-opacity duration-200
+             md:group-hover/left:opacity-100 md:group-hover/left:pointer-events-auto z-10"
+    >
+      <li><a href="/usta" class="text-white text-lg font-semibold hover:underline">usta</a></li>
+      <li><a href="/brwi" class="text-white text-lg font-semibold hover:underline">brwi</a></li>
+      <li><a href="/powieka" class="text-white text-lg font-semibold hover:underline">powieka</a></li>
+    </ul>
+  </div>
+
+  <!-- PRAWA -->
+  <div class="relative min-w-0 w-full flex-none md:flex-[1] h-[420px] md:h-full
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[1.4]
+              md:hover:z-10 md:hover:shadow-xl group/right">
+    <Image
+      src={rightBg}
+      alt="Background right"
+      class="absolute inset-0 w-full h-full object-cover"
+      width={1200}
+      height={600}
+      decoding="async"
+      fetchpriority="high"
+    />
+
+    <h2 class="absolute top-6 left-1/2 -translate-x-1/2 text-white text-3xl font-bold drop-shadow-lg z-10">
+      Fresh Lips
+    </h2>
+
+    <ul
+      class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+             opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
+             transition-opacity duration-200
+             md:group-hover/right:opacity-100 md:group-hover/right:pointer-events-auto z-10"
+    >
+      <li><a href="/modelowanie-ust" class="text-white text-lg font-semibold hover:underline">modelowanie ust</a></li>
+      <li><a href="/kolor" class="text-white text-lg font-semibold hover:underline">kolor</a></li>
+      <li><a href="/korekta" class="text-white text-lg font-semibold hover:underline">korekta</a></li>
+    </ul>
+  </div>
+</section>
+
+
 
