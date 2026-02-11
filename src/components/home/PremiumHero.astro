@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
-import leftBg from '@assets/powiekszanie_ust_koscierzyna_beauty.jpg';
-import rightBg from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
+import leftBg from '@assets/3.jpg';
+import rightBg from '@assets/5.jpg';
 ---
 
   <!-- Scroll indicator -->
@@ -22,8 +22,9 @@ import rightBg from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
   
   <!-- LEWA -->
   <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full
-              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[4]
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[6]
               md:hover:z-10 md:hover:shadow-xl group/left">
+
     <Image
       src={leftBg}
       alt="Background left"
@@ -44,6 +45,12 @@ import rightBg from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
              transition-opacity duration-200
              md:group-hover/left:opacity-100 md:group-hover/left:pointer-events-auto z-10"
     >
+      <ul
+        class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+               opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
+               transition-opacity duration-200
+               md:group-hover/left:opacity-100 md:group-hover/left:pointer-events-auto z-20"
+      >
       <li><a href="/usta" class="text-white text-lg font-semibold hover:underline">usta</a></li>
       <li><a href="/brwi" class="text-white text-lg font-semibold hover:underline">brwi</a></li>
       <li><a href="/powieka" class="text-white text-lg font-semibold hover:underline">powieka</a></li>
@@ -52,8 +59,9 @@ import rightBg from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
 
   <!-- PRAWA -->
   <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full
-              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[4]
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[6]
               md:hover:z-10 md:hover:shadow-xl group/right">
+
     <Image
       src={rightBg}
       alt="Background right"
@@ -74,6 +82,12 @@ import rightBg from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
              transition-opacity duration-200
              md:group-hover/right:opacity-100 md:group-hover/right:pointer-events-auto z-10"
     >
+      <ul
+        class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+               opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
+               transition-opacity duration-200
+               md:group-hover/right:opacity-100 md:group-hover/right:pointer-events-auto z-20"
+      >
       <li><a href="/modelowanie-ust" class="text-white text-lg font-semibold hover:underline">modelowanie ust</a></li>
       <li><a href="/kolor" class="text-white text-lg font-semibold hover:underline">kolor</a></li>
       <li><a href="/korekta" class="text-white text-lg font-semibold hover:underline">korekta</a></li>
