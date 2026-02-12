@@ -41,8 +41,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     </div>
   </div>
 
-  <!-- Main Navbar -->
-  <nav class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+  <nav class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-2">
     <!-- Logo -->
     <div class="flex items-center header-logo">
       <a href="/" class="flex items-center group">
@@ -73,14 +72,16 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       })}
     </div>
 
-    <!-- CTA Button -->
-    <div class="hidden lg:block">
-      <a
-        href="/kontakt"
-        class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transition-all"
-      >
-        Kontakt
-      </a>
+    <div class="hidden lg:flex lg:items-center">
+      <!-- CTA Button -->
+      <div>
+        <a
+          href="/kontakt"
+          class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transition-all"
+        >
+          Kontakt
+        </a>
+      </div>
     </div>
 
     <!-- Mobile Menu Button -->
