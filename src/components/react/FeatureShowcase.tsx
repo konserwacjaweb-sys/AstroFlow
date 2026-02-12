@@ -72,17 +72,6 @@ export default function FeatureShowcase() {
             transition={{ duration: 0.4 }}
           />
           <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60" />
-
-          {/* Icon overlay */}
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-            className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white shadow-lg"
-          >
-            <feature.icon className="h-6 w-6 text-blue-600" />
-          </motion.div>
         </div>
 
         {/* Content */}
@@ -96,10 +85,10 @@ export default function FeatureShowcase() {
 
   return (
     <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[11fr_9fr]">
-      <div className="grid grid-cols-1 gap-8 auto-rows-fr sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 auto-rows-fr sm:grid-cols-2 bg-[oklch(0.96_0_0_/_0.5)] p-8 rounded-xl">
         {leftFeatures.map((feature, index) => renderCard(feature, index))}
       </div>
-      <div className="grid grid-cols-1 gap-8 auto-rows-fr">
+      <div className="grid grid-cols-1 gap-8 auto-rows-fr bg-[oklch(0.96_0_0_/_0.5)] p-8 rounded-xl">
         {rightFeatures.map((feature, index) => renderCard(feature, index + leftFeatures.length))}
       </div>
     </div>
