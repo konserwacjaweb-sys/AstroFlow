@@ -103,37 +103,3 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
   window.addEventListener('scroll', handleScroll);
   handleScroll();
 </script>
-
-<style>
-  .site-header {
-    background: transparent;
-  }
-  
-  .site-header.is-sticky {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-  }
-  
-  .site-header.is-sticky .top-bar {
-    background: rgb(248 250 252);
-    border-color: rgb(226 232 240);
-  }
-  
-  .site-header.is-sticky .top-bar-link {
-    color: rgb(71 85 105);
-  }
-  
-  .site-header.is-sticky .top-bar-link:hover {
-    color: rgb(37 99 235);
-  }
-  
-  .site-header.is-sticky .nav-link {
-    color: rgb(51 65 85);
-  }
-  
-  .site-header.is-sticky .nav-link:hover {
-    color: rgb(37 99 235);
-    background: rgb(239 246 255);
-  }
-</style>

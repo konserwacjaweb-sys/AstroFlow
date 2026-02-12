@@ -70,30 +70,39 @@ html {
 }
 
 .site-header {
-  position: relative;
-  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
-  transform: translateY(0);
+  background: transparent;
 }
 
 .site-header.is-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.site-header.is-sticky .top-bar {
+  background: rgb(248 250 252);
+  border-color: rgb(226 232 240);
+}
+
+.site-header.is-sticky .top-bar-link {
+  color: rgb(71 85 105);
+}
+
+.site-header.is-sticky .top-bar-link:hover {
+  color: rgb(37 99 235);
+}
+
+.site-header.is-sticky .nav-link {
+  color: rgb(51 65 85);
+}
+
+.site-header.is-sticky .nav-link:hover {
+  color: rgb(37 99 235);
+  background: rgb(239 246 255);
 }
 
 .header-logo {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-4px);
   transition: opacity 200ms ease, transform 200ms ease;
-}
-
-.site-header.is-sticky .header-logo {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
 }
 
 .imagegrid-split {
