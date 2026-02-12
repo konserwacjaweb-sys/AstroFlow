@@ -91,14 +91,21 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 </header>
 
 <script>
+  const topBar = document.querySelector('.top-bar');
   const header = document.querySelector('[data-site-header]');
   const premiumHero = document.querySelector('#premium-hero');
 
-  if (header && premiumHero) {
+  if (topBar && header && premiumHero) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Dodaj is-sticky gdy premium-hero nie jest widoczny
-        header.classList.toggle('is-sticky', !entry.isIntersecting);
+        // Ukryj header i top-bar gdy premium-hero nie jest widoczny
+        if (!entry.isIntersecting) {
+          topBar.style.display = 'none';
+          header.style.display = 'none';
+        } else {
+          topBar.style.display = 'block';
+          header.style.display = 'block';
+        }
       },
       { threshold: 0, rootMargin: '0px' }
     );
