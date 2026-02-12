@@ -92,15 +92,17 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 
 <script>
   const header = document.querySelector('[data-site-header]');
-  
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      header?.classList.add('is-sticky');
-    } else {
-      header?.classList.remove('is-sticky');
-    }
-  };
+  const mainContent = document.querySelector('main');
+  const secondSection = mainContent?.querySelectorAll('section')[1];
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
+  if (header && secondSection) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        header.classList.toggle('is-sticky', !entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: '-1px 0px 0px 0px' }
+    );
+
+    observer.observe(secondSection);
+  }
 </script>
