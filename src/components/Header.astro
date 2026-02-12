@@ -9,39 +9,38 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 
 ---
 
-<!-- Top Bar - normalny flow, nie na premium-hero -->
-<div class="top-bar border-b border-slate-200 bg-slate-50 w-full z-40">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-10 items-center justify-between text-sm">
-      <div class="flex items-center gap-6">
+<!-- Nav - nałożona na premium-hero -->
+<header class="site-header absolute top-10 left-0 right-0 z-50 w-full transition-all duration-300" data-site-header>
+  <!-- Top Bar -->
+  <div class="top-bar border-b border-slate-200 bg-slate-50 w-full">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-10 items-center justify-between text-sm">
+        <div class="flex items-center gap-6">
+          <a
+            href="https://maps.app.goo.gl/sGgGBwZ52NhQ6kCN9"
+            class="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
+          >
+            <MapPin className="h-4 w-4" />
+            <span class="hidden sm:inline">Kościerzyna, Moniuszki 1</span>
+          </a>
+          <a
+            href="tel:+48123456789"
+            class="hidden md:inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
+          >
+            <Phone className="h-4 w-4" />
+            <span>+48 123 456 789</span>
+          </a>
+        </div>
         <a
-          href="https://maps.app.goo.gl/sGgGBwZ52NhQ6kCN9"
-          class="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
+          href="mailto:kontakt@wioletaliterska.pl"
+          class="hidden sm:inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
         >
-          <MapPin className="h-4 w-4" />
-          <span class="hidden sm:inline">Kościerzyna, Moniuszki 1</span>
-        </a>
-        <a
-          href="tel:+48123456789"
-          class="hidden md:inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
-        >
-          <Phone className="h-4 w-4" />
-          <span>+48 123 456 789</span>
+          <Mail className="h-4 w-4" />
+          <span>kontakt@wioletaliterska.pl</span>
         </a>
       </div>
-      <a
-        href="mailto:kontakt@wioletaliterska.pl"
-        class="hidden sm:inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
-      >
-        <Mail className="h-4 w-4" />
-        <span>kontakt@wioletaliterska.pl</span>
-      </a>
     </div>
   </div>
-</div>
-
-<!-- Nav - fixed, na premium-hero -->
-<header class="site-header fixed top-10 left-0 right-0 z-50 w-full transition-all duration-300" data-site-header>
   <nav class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-2">
     <!-- Logo -->
     <div class="flex items-center header-logo">
@@ -91,53 +90,18 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 </header>
 
 <script>
-  const topBar = document.querySelector('.top-bar');
   const header = document.querySelector('[data-site-header]');
   const premiumHero = document.querySelector('#premium-hero');
-  const mainContent = document.querySelector('main');
-  const serviceHighlights = mainContent?.querySelectorAll('section')[1]; // ServiceHighlights to druga sekcja
 
-  let isPremiumHeroVisible = true;
-  let isServiceHighlightsVisible = false;
-
-  if (topBar && header && premiumHero && serviceHighlights) {
-    // Obserwuj premium-hero
-    const premiumObserver = new IntersectionObserver(
+  if (header && premiumHero) {
+    const observer = new IntersectionObserver(
       ([entry]) => {
-        isPremiumHeroVisible = entry.isIntersecting;
-        updateHeaderVisibility();
+        // Sticky dopiero po sekcji premium-hero
+        header.classList.toggle('is-sticky', !entry.isIntersecting);
       },
       { threshold: 0, rootMargin: '0px' }
     );
 
-    // Obserwuj ServiceHighlights
-    const serviceObserver = new IntersectionObserver(
-      ([entry]) => {
-        isServiceHighlightsVisible = entry.isIntersecting;
-        updateHeaderVisibility();
-      },
-      { threshold: 0, rootMargin: '-80px 0px 0px 0px' }
-    );
-
-    function updateHeaderVisibility() {
-      if (isPremiumHeroVisible) {
-        // Na premium-hero: widoczny, przezroczysty
-        topBar.style.display = 'block';
-        header.style.display = 'block';
-        header.classList.remove('is-sticky');
-      } else if (isServiceHighlightsVisible) {
-        // Na ServiceHighlights: widoczny, biały, sticky
-        topBar.style.display = 'none';
-        header.style.display = 'block';
-        header.classList.add('is-sticky');
-      } else {
-        // Pomiędzy: ukryty
-        topBar.style.display = 'none';
-        header.style.display = 'none';
-      }
-    }
-
-    premiumObserver.observe(premiumHero);
-    serviceObserver.observe(serviceHighlights);
+    observer.observe(premiumHero);
   }
 </script>
