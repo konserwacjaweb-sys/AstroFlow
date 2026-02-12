@@ -8,11 +8,12 @@ export const SITE = {
 
 export const NAVIGATION = [
   { name: 'Home', href: '/' },
-  { name: 'Capabilities', href: '/capabilities' },
-  { name: 'Use Cases', href: '/use-cases' },
-  { name: 'Facilities', href: '/facilities' },
-  { name: 'Request Quote', href: '/rfq' },
-  { name: 'Documentation', href: '/documentation' },
+  { name: 'O mnie', href: '/o-mnie' },
+  { name: 'Usługi', href: '/uslugi' },
+  { name: 'Galeria', href: '/galeria' },
+  { name: 'Cennik', href: '/cennik' },
+  { name: 'Kontakt', href: '/kontakt' },
+  { name: 'FAQ', href: '/faq' },
 ] as const;
 
 export const SOCIAL_LINKS = {

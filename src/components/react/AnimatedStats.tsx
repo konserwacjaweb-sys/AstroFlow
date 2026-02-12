@@ -11,7 +11,7 @@ const stats: Stat[] = [
   { value: '500', label: 'Global Clients', suffix: '+' },
   { value: '50', label: 'Million Units Shipped', suffix: 'M+' },
   { value: '99.9', label: 'On-Time Delivery', suffix: '%' },
-  { value: '15', label: 'Facilities Worldwide', suffix: '+' },
+  { value: '15', label: 'Cennik Worldwide', suffix: '+' },
 ];
 
 export default function AnimatedStats() {

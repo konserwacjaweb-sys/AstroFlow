@@ -6,47 +6,43 @@ import leftBg from '@assets/3.jpg';
 import rightBg from '@assets/5.jpg';
 ---
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  </div>
-</section>
-
 <!-- nowa sekcja -->
-<section class="w-full m-0 p-0 flex flex-col md:flex-row overflow-hidden h-auto md:h-[650px]">
-  
-  <!-- H1: stały, na środku u góry całej sekcji -->
-  <h1 class="absolute left-1/2 -translate-x-1/2 z-50 text-white text-4xl lg:text-5xl font-extrabold drop-shadow-lg text-center px-4">Top Cosmetic </h1> 
+<section id="premium-hero" class="relative w-full m-0 p-0 flex flex-col md:flex-row overflow-hidden h-auto md:h-[700px]">
+  <div class="absolute flex flex-col items-center left-1/2 -translate-x-1/2 z-50 pt-4">
+  <a href="/" class="mb-6">
+    <img
+      src="/logo-wl.png"
+      alt="Wioleta Literska Logo"
+      class="object-contain w-[250px]"
+      width="250"
+      height="80"
+    />
+  </a>
+</div>
+
+  <h1 class="absolute bottom-20 left-1/2 -translate-x-1/2 z-50 text-white text-4xl lg:text-5xl font-normal font-poppins drop-shadow-lg text-center px-4">Top Cosmetic </h1>
   
   <!-- LEWA -->
-  <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full
-              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[6]
+  <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full md:peer/left
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[1.7] md:peer-hover/right:flex-[0.3]
               md:hover:z-10 md:hover:shadow-xl group/left">
 
     <Image
       src={leftBg}
       alt="Background left"
       class="absolute inset-0 w-full h-full object-cover"
-      width={1536}
-      height={650}
+      width={1920}
+      height={700}
       decoding="async"
       fetchpriority="high"
     />
+  <div class="absolute inset-0 bg-black/20"></div>
 
-    <h2 class="absolute top-6 left-1/2 -translate-x-1/2 text-white text-3xl font-bold drop-shadow-lg z-10">
-      Top permanent make up
+    <h2 class="absolute top-50 left-1/2 -translate-x-1/2 text-white text-4xl font-normal drop-shadow-lg z-10">
+      Fresh Lips™ </br>Modelowanie ust
     </h2>
-
-    <ul
-      class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
-             opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
-             transition-opacity duration-200
-             md:group-hover/left:opacity-100 md:group-hover/left:pointer-events-auto z-10"
-    >
       <ul
-        class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+        class="absolute top-80 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
                opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
                transition-opacity duration-200
                md:group-hover/left:opacity-100 md:group-hover/left:pointer-events-auto z-20"
@@ -58,39 +54,33 @@ import rightBg from '@assets/5.jpg';
   </div>
 
   <!-- PRAWA -->
-  <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full
-              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[6]
+  <div class="relative min-w-0 w-full flex-none md:flex-1 h-105 md:h-full md:peer/right
+              md:transition-[flex] md:duration-300 md:ease-out md:hover:flex-[1.7] md:peer-hover/left:flex-[0.3]
               md:hover:z-10 md:hover:shadow-xl group/right">
-
     <Image
       src={rightBg}
       alt="Background right"
       class="absolute inset-0 w-full h-full object-cover"
-      width={1536}
-      height={650}
+      width={1920}
+      height={700}
       decoding="async"
       fetchpriority="high"
     />
-
-    <h2 class="absolute top-6 left-1/2 -translate-x-1/2 text-white text-3xl font-bold drop-shadow-lg z-10">
-      Fresh Lips
+<div class="absolute inset-0 bg-slate-900/10"></div>
+    <h2 class="absolute top-50 left-1/2 -translate-x-1/2 text-white text-3xl font-normal drop-shadow-lg z-10">
+      Top permanent makeup
     </h2>
 
-    <ul
-      class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
-             opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
-             transition-opacity duration-200
-             md:group-hover/right:opacity-100 md:group-hover/right:pointer-events-auto z-10"
-    >
+   
       <ul
-        class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
+        class="absolute top-60 left-1/2 -translate-x-1/2 flex gap-6 flex-wrap justify-center
                opacity-100 pointer-events-auto md:opacity-0 md:pointer-events-none
                transition-opacity duration-200
                md:group-hover/right:opacity-100 md:group-hover/right:pointer-events-auto z-20"
       >
-      <li><a href="/modelowanie-ust" class="text-white text-lg font-semibold hover:underline">modelowanie ust</a></li>
-      <li><a href="/kolor" class="text-white text-lg font-semibold hover:underline">kolor</a></li>
-      <li><a href="/korekta" class="text-white text-lg font-semibold hover:underline">korekta</a></li>
+      <li><a href="/modelowanie-ust" class="text-white text-lg font-semibold hover:underline">Usta</a></li>
+      <li><a href="/kolor" class="text-white text-lg font-semibold hover:underline">Brwi</a></li>
+      <li><a href="/korekta" class="text-white text-lg font-semibold hover:underline">Powieka</a></li>
     </ul>
   </div>
 </section>

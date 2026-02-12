@@ -1,5 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@300&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-heading: "Playfair Display", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-helvetica {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.font-playfair {
+  font-family: "Playfair Display";
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;
@@ -43,4 +67,133 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.site-header {
+  position: relative;
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  transform: translateY(0);
+}
+
+.site-header.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+}
+
+.header-logo {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.site-header.is-sticky .header-logo {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.imagegrid-split {
+  display: flex;
+  min-height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  gap: 16px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.imagegrid-panel {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 320px;
+}
+
+.imagegrid-left {
+  flex-basis: 100%;
+  animation: imagegrid-left-shrink 1600ms ease forwards;
+}
+
+
+.imagegrid-right {
+  flex-basis: 0%;
+  opacity: 0;
+  animation: imagegrid-right-reveal 800ms ease forwards;
+  animation-delay: 1600ms;
+}
+
+.imagegrid-card {
+  position: relative;
+  height: 100%;
+  min-height: 320px;
+}
+
+.imagegrid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagegrid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0));
+}
+
+.imagegrid-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 32px;
+  color: #fff;
+}
+
+@keyframes imagegrid-left-shrink {
+  from {
+    flex-basis: 100%;
+  }
+  to {
+    flex-basis: 50%;
+  }
+}
+
+
+@keyframes imagegrid-right-reveal {
+  from {
+    flex-basis: 0%;
+    opacity: 0;
+  }
+  to {
+    flex-basis: 50%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .imagegrid-split {
+    flex-direction: column;
+  }
+
+  .imagegrid-left,
+  .imagegrid-right {
+    flex-basis: auto;
+    animation: none;
+    opacity: 1;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imagegrid-left,
+  .imagegrid-right {
+    animation: none;
+    flex-basis: 50%;
+    opacity: 1;
+  }
+
 }
