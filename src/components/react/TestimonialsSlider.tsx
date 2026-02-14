@@ -61,7 +61,23 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
             }`}
           >
             <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden h-full grid grid-cols-1 lg:grid-cols-2">
-              {/* Left Column - Quote */}
+              {/* Left Column - Background Image */}
+              <div 
+                className="hidden lg:flex flex-col items-center justify-center p-8 relative"
+                style={{
+                  backgroundImage: `url(${testimonial.imageSrc})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <span className="text-white/80 text-sm font-semibold mb-3">Opinia Klientki</span>
+                  <h2 className="text-white text-2xl font-bold">{testimonial.name}</h2>
+                </div>
+              </div>
+
+              {/* Right Column - Quote */}
               <div className="p-8 lg:p-12 flex flex-col items-center justify-center text-center space-y-6">
                 {/* Quote Icon */}
                 <div className="text-blue-600 opacity-20">
@@ -87,22 +103,6 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
                   <p className="text-slate-600 text-sm">
                     {testimonial.role}
                   </p>
-                </div>
-              </div>
-
-              {/* Right Column - Background Image */}
-              <div 
-                className="hidden lg:flex flex-col items-center justify-center p-8 relative"
-                style={{
-                  backgroundImage: `url(${testimonial.imageSrc})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <span className="text-white/80 text-sm font-semibold mb-3">Opinia Klientki</span>
-                  <h2 className="text-white text-2xl font-bold">{testimonial.name}</h2>
                 </div>
               </div>
             </div>
