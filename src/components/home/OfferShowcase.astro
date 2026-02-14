@@ -85,12 +85,12 @@ const links = [
             Oferujemy kompleksowe usługi makijażu permanentnego i upiększającego zabiegi dla pani cery.
           </p>
 
-          {/* Links - Horizontal 2x3 Grid */}
-          <div class="grid grid-cols-2 gap-3 lg:gap-4">
+          {/* Links - Horizontal Wrapped */}
+          <div class="flex flex-wrap gap-3 lg:gap-4">
             {links.map((link) => (
               <a 
                 href={link.href}
-                class="text-sm lg:text-base font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors py-2 px-3 rounded-lg hover:bg-slate-50"
+                class="text-sm lg:text-base font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors py-2 px-3 rounded-lg hover:bg-slate-50 whitespace-nowrap"
               >
                 {link.label}
               </a>
