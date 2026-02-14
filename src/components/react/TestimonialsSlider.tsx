@@ -60,25 +60,25 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
                 : 'opacity-0 translate-y-4 pointer-events-none'
             }`}
           >
-            <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden h-full grid grid-cols-1 lg:grid-cols-2">
+            <div className="h-full grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 lg:gap-8">
               {/* Left Column - Background Image */}
               <div 
-                className="hidden lg:flex flex-col items-center justify-center p-8 relative"
+                className="hidden lg:flex flex-col items-center justify-center p-8 rounded-3xl shadow-xl relative overflow-hidden"
                 style={{
                   backgroundImage: `url(${testimonial.imageSrc})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               >
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="relative z-10 flex flex-col items-center text-center">
-                  <span className="text-white/80 text-sm font-semibold mb-3">Opinia Klientki</span>
-                  <h2 className="text-white text-2xl font-bold">{testimonial.name}</h2>
+                  <span className="text-white/90 text-sm font-semibold mb-3">Opinia Klientki</span>
+                  <h2 className="text-white text-3xl font-bold">{testimonial.name}</h2>
                 </div>
               </div>
 
-              {/* Right Column - Quote */}
-              <div className="p-8 lg:p-12 flex flex-col items-center justify-center text-center space-y-6">
+              {/* Right Column - Quote Card */}
+              <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 lg:p-10 flex flex-col items-center justify-center text-center space-y-6">
                 {/* Quote Icon */}
                 <div className="text-blue-600 opacity-20">
                   <svg 
