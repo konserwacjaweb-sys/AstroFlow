@@ -25,32 +25,8 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
   }, [testimonials.length]);
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <div className="flex items-center justify-center gap-4 lg:gap-8">
-        {/* Left Arrow */}
-        <button
-          onClick={() => setActiveSlide((current) => (current - 1 + testimonials.length) % testimonials.length)}
-          className="hidden lg:flex p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md shrink-0"
-          aria-label="Poprzednia opinia"
-        >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M15 19l-7-7 7-7" 
-            />
-          </svg>
-        </button>
-
-        {/* Slider Container */}
-        <div className="flex-1">
-          <div className="relative min-h-100 lg:min-h-96">
+    <div className="w-full max-w-2xl mx-auto">
+      <div className="relative min-h-[450px]">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -60,95 +36,39 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
                 : 'opacity-0 translate-y-4 pointer-events-none'
             }`}
           >
-            <div className="h-full grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 lg:gap-8">
-              {/* Left Column - Background Image */}
-              <div 
-                className="hidden lg:flex flex-col items-center justify-center p-8 rounded-3xl shadow-xl relative overflow-hidden"
-                style={{
-                  backgroundImage: `url(${testimonial.imageSrc})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <span className="text-white/90 text-sm font-semibold mb-3">Opinia Klientki</span>
-                  <h2 className="text-white text-3xl font-bold">{testimonial.name}</h2>
-                </div>
+            <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 lg:p-12 h-full flex flex-col items-center justify-center text-center space-y-6">
+              {/* Quote Icon */}
+              <div className="text-blue-600 opacity-20">
+                <svg 
+                  className="w-16 h-16" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
               </div>
 
-              {/* Right Column - Quote Card */}
-              <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 lg:p-10 flex flex-col items-center justify-center text-center space-y-6">
-                {/* Quote Icon */}
-                <div className="text-blue-600 opacity-20">
-                  <svg 
-                    className="w-16 h-16" 
-                    fill="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
+              {/* Quote */}
+              <p className="text-lg lg:text-xl text-slate-700 leading-relaxed italic">
+                "{testimonial.quote}"
+              </p>
 
-                {/* Quote */}
-                <p className="text-lg lg:text-xl text-slate-700 leading-relaxed italic">
-                  "{testimonial.quote}"
+              {/* Author Info */}
+              <div className="flex flex-col items-center space-y-2 pt-4">
+                <p className="font-bold text-slate-900 text-lg">
+                  {testimonial.name}
                 </p>
-
-                {/* Author Info */}
-                <div className="flex flex-col items-center space-y-2 pt-4">
-                  <p className="font-bold text-slate-900 text-lg">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-slate-600 text-sm">
-                    {testimonial.role}
-                  </p>
-                </div>
+                <p className="text-slate-600 text-sm">
+                  {testimonial.role}
+                </p>
               </div>
             </div>
           </div>
-))}        
-          </div>
-        </div>
-
-        {/* Right Arrow */}
-        <button
-          onClick={() => setActiveSlide((current) => (current + 1) % testimonials.length)}
-          className="hidden lg:flex p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md shrink-0"
-          aria-label="Następna opinia"
-        >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M9 5l7 7-7 7" 
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Navigation Dots */}
-      <div className="flex justify-center gap-3 mt-8 mb-8">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              activeSlide === index 
-                ? 'w-12 bg-blue-600' 
-                : 'w-2 bg-slate-300 hover:bg-slate-400'
-            }`}
-            aria-label={`Przejdź do opinii ${index + 1}`}
-          />
         ))}
       </div>
-      <div className="flex lg:hidden justify-center gap-4 mt-6">
+
+      {/* Navigation Arrows */}
+      <div className="flex items-center justify-center gap-4 mt-8">
         <button
           onClick={() => setActiveSlide((current) => (current - 1 + testimonials.length) % testimonials.length)}
           className="p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md"
@@ -168,6 +88,23 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
             />
           </svg>
         </button>
+
+        {/* Navigation Dots */}
+        <div className="flex justify-center gap-3">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeSlide === index 
+                  ? 'w-12 bg-blue-600' 
+                  : 'w-2 bg-slate-300 hover:bg-slate-400'
+              }`}
+              aria-label={`Przejdź do opinii ${index + 1}`}
+            />
+          ))}
+        </div>
+
         <button
           onClick={() => setActiveSlide((current) => (current + 1) % testimonials.length)}
           className="p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md"

@@ -1,30 +1,30 @@
 ---
-import TestimonialCard from '../ui/TestimonialCard.astro';
-
+import { Image } from 'astro:assets';
 import testimonial1Img from '@assets/photo-1494790108377-be9c29b29330.jpg';
 import testimonial2Img from '@assets/photo-1507003211169-0a1dd7228f2d.jpg';
 import testimonial3Img from '@assets/photo-1438761681033-6461ffad8d80.jpg';
+import TestimonialsSlider from '../react/TestimonialsSlider.tsx';
 
-const testimonials= [
+const testimonials = [
   {
-    quote: "AstroFlow transformed our entire supply chain. Their automated warehousing solution reduced our fulfillment time by 40% and cut operational costs significantly. The real-time visibility they provide is game-changing.",
-    name: "Sarah Mitchell",
-    role: "VP of Operations, TechCorp",
-    image: testimonial1Img,
+    quote: "Profesjonalizm na najwyższym poziomie. Makijaż permanentny brwi wykonany perfekcyjnie, naturalny efekt który utrzymuje się już rok. Serdecznie polecam!",
+    name: "Anna Kowalska",
+    role: "Klientka",
+    imageSrc: testimonial1Img.src,
     ringColor: "ring-blue-200"
   },
   {
-    quote: "The manufacturing capabilities at AstroFlow are exceptional. They've helped us scale production while maintaining the highest quality standards. Their ISO-certified processes give us complete confidence.",
-    name: "Robert Johnson",
-    role: "CEO, Global Manufacturing Inc.",
-    image: testimonial2Img,
+    quote: "Wspaniałe doświadczenie! Powiększanie ust było bezbolesne, a efekt jest dokładnie taki jak sobie wymarzyłam. Wioleta jest prawdziwym profesjonalistą.",
+    name: "Magdalena Nowak",
+    role: "Klientka",
+    imageSrc: testimonial2Img.src,
     ringColor: "ring-teal-200"
   },
   {
-    quote: "Outstanding logistics partner. Their fleet management and route optimization have improved our delivery times and reduced fuel costs. The command center gives us complete visibility into every shipment.",
-    name: "Emily Williams",
-    role: "Supply Chain Director, RetailMax",
-    image: testimonial3Img,
+    quote: "Najlepsza inwestycja w siebie! Po zabiegu makijażu permanentnego ust oszczędzam mnóstwo czasu każdego ranka. Efekt naturalny i trwały.",
+    name: "Karolina Wiśniewska",
+    role: "Klientka",
+    imageSrc: testimonial3Img.src,
     ringColor: "ring-blue-200"
   }
 ];
@@ -32,22 +32,29 @@ const testimonials= [
 
 <section class="py-24 bg-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <div class="inline-block px-4 py-2 mb-4 bg-teal-100 text-teal-800 text-sm font-semibold rounded-full">
-        Client Success Stories
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Pierwsza kolumna: Obraz z tekstem */}
+      <div class="rounded-4xl">
+        <div class="relative h-full min-h-[400px] lg:min-h-[500px]">
+          <Image
+            src={testimonial1Img}
+            alt="Opinia klientki"
+            class="h-full w-full object-cover rounded-4xl"
+            width={1000}
+            height={600}
+            decoding="async"
+          />
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-4xl">
+            <h3 class="text-2xl lg:text-3xl font-bold mb-2">Opinie Klientów</h3>
+            <p class="text-gray-100">Przeczytaj co mówią nasze zadowolone klientki</p>
+          </div>
+        </div>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-        Trusted by <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Industry Leaders</span>
-      </h2>
-      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        See how we've helped companies transform their supply chain operations and achieve remarkable results.
-      </p>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {testimonials.map((testimonial) => (
-        <TestimonialCard testimonial={testimonial} variant="home" />
-      ))}
+      {/* Druga kolumna: Opinie */}
+      <div class="rounded-4xl flex flex-col items-center justify-center p-6">
+        <TestimonialsSlider testimonials={testimonials} client:load />
+      </div>
     </div>
   </div>
 </section>
