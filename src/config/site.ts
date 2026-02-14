@@ -9,7 +9,7 @@ export const SITE = {
 export const NAVIGATION = [
   { name: 'Home', href: '/' },
   { name: 'O mnie', href: '/o-mnie' },
-  { name: 'Usługi', href: '/uslugi' },
+  { name: 'Oferta', href: '/oferta' },
   { name: 'Galeria', href: '/galeria' },
   { name: 'Cennik', href: '/cennik' },
   { name: 'Kontakt', href: '/kontakt' },

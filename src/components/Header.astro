@@ -46,10 +46,10 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <div class="flex items-center header-logo">
       <a href="/" class="flex items-center group">
         <img
-          src="/wioleta_literska_logo.png"
+          src="/logo_jednolite.png"
           alt="Wioleta Literska Logo"
           class="object-contain"
-          width="218"
+          width="123"
           height="70"
           decoding="async"
           fetchpriority="high"
@@ -84,17 +84,20 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 
 <script>
   const header = document.querySelector('[data-site-header]');
-  const premiumHero = document.querySelector('#premium-hero');
+  const sections = document.querySelectorAll('main section');
+  const firstSection = sections[0];
 
-  if (header && premiumHero) {
+  if (header && firstSection) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Sticky dopiero po sekcji premium-hero
+        // Sticky od drugiej sekcji (po opuszczeniu pierwszej)
         header.classList.toggle('is-sticky', !entry.isIntersecting);
       },
       { threshold: 0, rootMargin: '0px' }
     );
 
-    observer.observe(premiumHero);
+    observer.observe(firstSection);
+  } else if (header) {
+    header.classList.add('is-sticky');
   }
 </script>

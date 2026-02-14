@@ -7,12 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [react()],
   redirects: {
-    '/capabilities': '/uslugi',
+    '/capabilities': '/oferta',
     '/facilities': '/cennik',
     '/rfq': '/kontakt',
     '/use-cases': '/galeria',
-    '/documentation': '/faq',
-    '/faq': '/kontakt',
   },
   vite: {
     plugins: [tailwindcss()]

@@ -11,42 +11,77 @@ import carouselImgFive from '@assets/powiekszanie_ust_koscierzyna_beauty.jpg';
 
  <!-- Nowa sekcja -->
 <section class="py-24">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
-    <div class="rounded-4xl">
-      <div class="relative h-full min-h-[320px] max-h-[600px]"></div>
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Pierwsza kolumna: Obraz z tekstem -->
+      <div class="rounded-4xl">
+        <div class="relative h-full min-h-[400px] lg:min-h-[500px]">
           <Image
             src={warehouseImg}
             alt="Automated warehouse with modern robotics"
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover rounded-4xl"
             width={1000}
             height={600}
             decoding="async"
           />
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-4xl">
+            <h3 class="text-2xl lg:text-3xl font-bold mb-2">Automated Warehousing</h3>
+            <p class="text-gray-100">Advanced robotics and AI-powered inventory management</p>
+          </div>
+        </div>
       </div>
-      <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
-        <h3 class="text-2xl font-bold mb-2">Automated Warehousing</h3>
-        <p class="text-gray-200">Advanced robotics and AI-powered inventory management</p>
-      </div>
-  
-
-    <div class="rounded-4xl">
-    </div>
-
-  </div>
-</section>    
     
-    <!-- Bottom CTA -->
-    <div class="text-center mt-16">
-      <a 
-        href="/cennik" 
-        class="inline-flex items-center px-8 py-4 text-base font-semibold text-white bg-linear-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-lg shadow-lg hover:shadow-xl transition-all group"
-      >
-        Poznaj cennik
-        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
+      <!-- Druga kolumna: Karuzela -->
+      <div class="rounded-4xl flex flex-col items-center justify-center p-6">
+        <div class="carousel-container-new relative w-full">
+          <!-- Karuzela z białą ramką -->
+          <div class="carousel-frame relative w-full aspect-[4/3] overflow-hidden border-[20px] border-white shadow-2xl rounded-lg">
+            <div class="carousel-slide-new active absolute inset-0 transition-opacity duration-700" data-description="Profesjonalny makijaż permanentny brwi">
+              <Image src={carouselImgOne} alt="Slide 1" class="w-full h-full object-cover" />
+            </div>
+            <div class="carousel-slide-new absolute inset-0 opacity-0 transition-opacity duration-700" data-description="Stylizacja brwi metodą henna">
+              <Image src={carouselImgTwo} alt="Slide 2" class="w-full h-full object-cover" />
+            </div>
+            <div class="carousel-slide-new absolute inset-0 opacity-0 transition-opacity duration-700" data-description="Powiększanie ust kwasem hialuronowym">
+              <Image src={carouselImgThree} alt="Slide 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="carousel-slide-new absolute inset-0 opacity-0 transition-opacity duration-700" data-description="Naturalny efekt makijażu permanentnego">
+              <Image src={carouselImgFour} alt="Slide 4" class="w-full h-full object-cover" />
+            </div>
+            <div class="carousel-slide-new absolute inset-0 opacity-0 transition-opacity duration-700" data-description="Modelowanie ust - efekt przed i po">
+              <Image src={carouselImgFive} alt="Slide 5" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          
+          <!-- Strzałki bez tła -->
+          <button class="carousel-btn-prev absolute left-2 top-1/2 -translate-y-1/2 z-30 p-2 transition-transform hover:scale-110" aria-label="Previous slide">
+            <svg class="w-10 h-10" fill="white" viewBox="0 0 24 24" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+          <button class="carousel-btn-next absolute right-2 top-1/2 -translate-y-1/2 z-30 p-2 transition-transform hover:scale-110" aria-label="Next slide">
+            <svg class="w-10 h-10" fill="white" viewBox="0 0 24 24" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Opis pod karuzelą -->
+        <p class="carousel-description text-center text-slate-700 text-lg mt-6 mb-4 min-h-[28px]">Profesjonalny makijaż permanentny brwi</p>
+        
+        <!-- Button do galerii -->
+        <a 
+          href="/galeria" 
+          class="inline-flex items-center px-6 py-5 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-lg shadow-lg hover:shadow-xl transition-all group"
+        >
+          Zobacz galerię
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
     </div>
+    
   </div>
 </section>
 
@@ -83,6 +118,55 @@ import carouselImgFive from '@assets/powiekszanie_ust_koscierzyna_beauty.jpg';
     nextButton?.addEventListener('click', () => {
       goNext();
     });
+  });
+</script>
+
+<script>
+  // Nowa karuzela dla drugiej kolumny
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.carousel-container-new');
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.carousel-slide-new');
+    const prevBtn = container.querySelector('.carousel-btn-prev');
+    const nextBtn = container.querySelector('.carousel-btn-next');
+    const descriptionEl = document.querySelector('.carousel-description');
+    
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0');
+          slide.classList.add('active');
+          // Aktualizuj opis
+          if (descriptionEl) {
+            const description = slide.getAttribute('data-description');
+            descriptionEl.textContent = description || '';
+          }
+        } else {
+          slide.classList.add('opacity-0');
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    showSlide(0);
   });
 </script>
 
