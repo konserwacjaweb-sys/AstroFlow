@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import testimonial1Img from '@assets/photo-1494790108377-be9c29b29330.jpg';
 import testimonial2Img from '@assets/photo-1507003211169-0a1dd7228f2d.jpg';
 import testimonial3Img from '@assets/photo-1438761681033-6461ffad8d80.jpg';
+import opinieImg from '@assets/opinie.jpg';
 import TestimonialsSlider from '../react/TestimonialsSlider.tsx';
 
 const testimonials = [
@@ -26,6 +27,13 @@ const testimonials = [
     role: "Klientka",
     imageSrc: testimonial3Img.src,
     ringColor: "ring-blue-200"
+  },
+  {
+    quote: "Niezwykły profesjonalizm i dbałość o szczegóły. Makijaż permanentny wykonany z dużą precyzją. Przesłoma różnica w wyglądzie!",
+    name: "Justyna Lewandowska",
+    role: "Klientka",
+    imageSrc: opinieImg.src,
+    ringColor: "ring-purple-200"
   }
 ];
 ---
@@ -35,18 +43,15 @@ const testimonials = [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Pierwsza kolumna: Obraz z tekstem */}
       <div class="rounded-4xl">
-        <div class="relative h-full min-h-[400px] lg:min-h-[500px]">
-          <Image
-            src={testimonial1Img}
-            alt="Opinia klientki"
-            class="h-full w-full object-cover rounded-4xl"
-            width={1000}
-            height={600}
-            decoding="async"
-          />
-          <div class="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-4xl">
-            <h3 class="text-2xl lg:text-3xl font-bold mb-2">Opinie Klientów</h3>
-            <p class="text-gray-100">Przeczytaj co mówią nasze zadowolone klientki</p>
+        <div 
+          class="relative h-full min-h-[400px] lg:min-h-[500px] rounded-4xl bg-cover bg-center"
+          style={`background-image: url(${testimonial1Img.src})`}
+        >
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white rounded-b-4xl">
+            <span class="text-sm uppercase tracking-wide">
+             Opinie naszych klientów
+            </span>
+            <h2 class="mb-2 py-3">Prawdziwe opinie. Prawdziwe <span class="border-2 border-white rounded-[20px] px-3 py-1">Rezultaty</span></h2>
           </div>
         </div>
       </div>

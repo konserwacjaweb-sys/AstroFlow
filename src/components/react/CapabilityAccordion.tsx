@@ -31,10 +31,10 @@ export default function CapabilityAccordion({ capabilities }: Props) {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-gray-900">
                     {capability.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-gray-600 mt-1">
                     {capability.description}
                   </p>
                 </div>

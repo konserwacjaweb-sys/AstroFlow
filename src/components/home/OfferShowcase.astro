@@ -18,12 +18,12 @@ const links = [
 
 <section class="min-h-[600px] py-16 lg:py-24">
   <div class="container mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 items-stretch">
-      {/* Left Column - 2x2 Grid */}
-      <div class="grid grid-cols-2 gap-4">
-        {/* Item 1 - 400px height */}
+    <div class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 items-stretch">
+      {/* Left Column - Astro Island Layout */}
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-[200px]">
+        {/* Item 1 - High, column 1, rows 1-2 */}
         <div 
-          class="rounded-3xl overflow-hidden shadow-lg h-[400px]"
+          class="rounded-3xl overflow-hidden shadow-lg lg:row-span-2"
           style={{
             backgroundImage: `url(${img1.src})`,
             backgroundSize: 'cover',
@@ -31,9 +31,9 @@ const links = [
           }}
         />
 
-        {/* Item 2 - Auto height */}
+        {/* Item 2 - Low, column 2, row 1 */}
         <div 
-          class="rounded-3xl overflow-hidden shadow-lg flex-1"
+          class="rounded-3xl overflow-hidden shadow-lg"
           style={{
             backgroundImage: `url(${img2.src})`,
             backgroundSize: 'cover',
@@ -41,21 +41,21 @@ const links = [
           }}
         />
 
-        {/* Item 3 - Auto height */}
+        {/* Item 4 - High, column 2, rows 2-3 */}
         <div 
-          class="rounded-3xl overflow-hidden shadow-lg flex-1"
+          class="rounded-3xl overflow-hidden shadow-lg lg:row-span-2"
           style={{
-            backgroundImage: `url(${img3.src})`,
+            backgroundImage: `url(${img4.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         />
 
-        {/* Item 4 - 400px height */}
+        {/* Item 3 - Low, column 1, row 3 */}
         <div 
-          class="rounded-3xl overflow-hidden shadow-lg h-[400px]"
+          class="rounded-3xl overflow-hidden shadow-lg"
           style={{
-            backgroundImage: `url(${img4.src})`,
+            backgroundImage: `url(${img3.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -63,7 +63,7 @@ const links = [
       </div>
 
       {/* Right Column - Content */}
-      <div class="flex flex-col justify-between p-8 lg:p-10">
+      <div class="flex flex-col justify-between p-8 lg:pl-[100px] lg:pr-10 lg:py-10">
         {/* Top Section */}
         <div>
           {/* Logo */}
@@ -76,21 +76,21 @@ const links = [
           </div>
 
           {/* Heading */}
-          <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          <h2 class="text-slate-900 mb-4">
             Nasze Oferty
           </h2>
 
           {/* Description */}
-          <p class="text-slate-600 text-lg leading-relaxed mb-8">
+          <p class="text-slate-600 leading-relaxed mb-8">
             Oferujemy kompleksowe usługi makijażu permanentnego i upiększającego zabiegi dla pani cery.
           </p>
 
           {/* Links - Horizontal Wrapped */}
-          <div class="flex flex-wrap gap-3 lg:gap-4">
+          <div class="flex flex-wrap gap-2 lg:gap-3">
             {links.map((link) => (
               <a 
                 href={link.href}
-                class="text-sm lg:text-base font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors py-2 px-3 rounded-lg hover:bg-slate-50 whitespace-nowrap"
+                class="text-sm lg:text-base font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors py-1 px-2 rounded-lg hover:bg-slate-50"
               >
                 {link.label}
               </a>

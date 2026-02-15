@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { Warehouse, Truck, Package, BarChart3, Shield } from 'lucide-react';
 
-import shieldImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
+import shieldImg from '@assets/zalety-bg.jpg';
+import logo from '@assets/logo_jednolite.png';
 
 const leftFeatures = [
   {
@@ -45,9 +46,9 @@ export default function FeatureShowcase() {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group h-full cursor-pointer"
     >
-      <div className={`relative h-full overflow-hidden rounded-4xl transition-all duration-300 ${!showImage ? 'bg-[oklch(0.96_0_0_/_0.5)]' : ''}`}>
+      <div className={`relative h-full overflow-hidden rounded-4xl transition-all duration-300 ${!showImage ? 'bg-[oklch(0.96_0_0/0.5)]' : ''}`}>
         {/* Image */}
-        {showImage && (
+        {showImage && 'image' in feature && (
           <div className="relative h-full min-h-64 overflow-hidden">
             <motion.img
               src={feature.image.src}
@@ -57,22 +58,32 @@ export default function FeatureShowcase() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
             />
-            <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60" />
+            
+            {/* Logo w lewym dolnym rogu */}
+            <div className="absolute bottom-6 left-6">
+              <img 
+                src={logo.src} 
+                alt="Logo" 
+                className="h-17.5 w-auto object-contain"
+              />
+            </div>
           </div>
         )}
 
-        {/* Content */}
-        <div className={`${showImage ? 'absolute bottom-0 left-0 right-0 p-6 text-white' : 'p-6 text-slate-900'}`}>
-          <h3 className="mb-2 text-xl font-bold">{feature.title}</h3>
-          <p className={`text-sm opacity-90 ${showImage ? 'text-gray-200' : 'text-slate-600'}`}>{feature.description}</p>
-        </div>
+        {/* Content - tylko dla kart bez obrazu */}
+        {!showImage && (
+          <div className="py-15 px-10 text-slate-900">
+            <h3 className="mb-4 leading-normal">{feature.title}</h3>
+            <p className="text-slate-900 opacity-90">{feature.description}</p>
+          </div>
+        )}
       </div>
     </motion.div>
   );
 
   return (
-    <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[11fr_9fr]">
-      <div className="grid grid-cols-1 gap-8 auto-rows-fr sm:grid-cols-2">
+    <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[11fr_9fr]">
+      <div className="grid grid-cols-1 gap-6 auto-rows-fr sm:grid-cols-2">
         {leftFeatures.map((feature, index) => renderCard(feature, index, false))}
       </div>
       <div className="grid grid-cols-1 gap-8 auto-rows-fr">

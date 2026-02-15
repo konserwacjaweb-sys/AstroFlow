@@ -25,20 +25,21 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
   }, [testimonials.length]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <div className="relative min-h-[450px]">
+    <div className="w-full max-w-2xl mx-auto h-[600px] lg:h-[600px]">
+      <div className="relative" style={{ minHeight: '600px' }}>
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-700 ${
+            className={`absolute inset-0 transition-opacity duration-700 ${
               activeSlide === index 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-4 pointer-events-none'
+                ? 'opacity-100 pointer-events-auto' 
+                : 'opacity-0 pointer-events-none'
             }`}
+            style={{ transitionProperty: 'opacity' }}
           >
-            <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 lg:p-12 h-full flex flex-col items-center justify-center text-center space-y-6">
+            <div className="bg-[#2C3E44] rounded-3xl p-8 lg:p-12 h-full flex flex-col items-center justify-center text-center space-y-6" style={{ willChange: 'opacity' }}>
               {/* Quote Icon */}
-              <div className="text-blue-600 opacity-20">
+              <div className="text-white opacity-20">
                 <svg 
                   className="w-16 h-16" 
                   fill="currentColor" 
@@ -49,17 +50,14 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
               </div>
 
               {/* Quote */}
-              <p className="text-lg lg:text-xl text-slate-700 leading-relaxed italic">
+              <p className="!text-[1.4rem] text-white leading-relaxed italic">
                 "{testimonial.quote}"
               </p>
 
               {/* Author Info */}
               <div className="flex flex-col items-center space-y-2 pt-4">
-                <p className="font-bold text-slate-900 text-lg">
+                <p className="text-white">
                   {testimonial.name}
-                </p>
-                <p className="text-slate-600 text-sm">
-                  {testimonial.role}
                 </p>
               </div>
             </div>
@@ -71,7 +69,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
       <div className="flex items-center justify-center gap-4 mt-8">
         <button
           onClick={() => setActiveSlide((current) => (current - 1 + testimonials.length) % testimonials.length)}
-          className="p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md"
+          className="p-3 text-slate-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
           aria-label="Poprzednia opinia"
         >
           <svg 
@@ -107,7 +105,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
 
         <button
           onClick={() => setActiveSlide((current) => (current + 1) % testimonials.length)}
-          className="p-3 rounded-full bg-white border-2 border-slate-200 text-slate-700 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-md"
+          className="p-3 text-slate-900 hover:bg-blue-50 transition-all duration-300"
           aria-label="Następna opinia"
         >
           <svg 

@@ -141,7 +141,7 @@ const capabilities = [
           </span>
         </h1>
         
-        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
           Kompleksowe usługi makijażu permanentnego i upiększające zabiegi dla Twojej pielęgnacji.
         </p>
       </div>
@@ -163,10 +163,10 @@ const capabilities = [
             <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-linear-to-br from-blue-500 to-teal-500 text-white mb-6 shadow-lg">
               <div class="w-8 h-8" set:html={capability.icon.replace('w-12 h-12', 'w-8 h-8').replace('currentColor', 'white')} />
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-gray-900 mb-4">
               {capability.title}
             </h2>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            <p class="text-gray-600 mb-6 leading-relaxed">
               {capability.description}
             </p>
             <ul class="space-y-3">
@@ -192,7 +192,7 @@ const capabilities = [
                 />
                 <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h3 class="text-2xl font-bold mb-2">{capability.title}</h3>
+                  <h3 class="mb-2">{capability.title}</h3>
                   <p class="text-gray-200">{capability.description}</p>
                 </div>
               </div>
@@ -209,10 +209,10 @@ const capabilities = [
       <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
         Nasz Proces
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <h2 class="text-gray-900 mb-4">
         Jak <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Pracujemy</span>
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
         Systematyczne podejście do osiągnięcia wyjątkowych rezultatów.
       </p>
     </div>
@@ -257,7 +257,7 @@ const capabilities = [
             <div set:html={process.icon} />
           </div>
           <div class="text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600 mb-2">{process.step}</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{process.title}</h3>
+          <h3 class="text-gray-900 mb-3">{process.title}</h3>
           <p class="text-gray-600 leading-relaxed">{process.description}</p>
         </Card>
       ))}
@@ -284,10 +284,10 @@ const capabilities = [
         <div class="inline-block px-4 py-2 mb-6 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
           Rozpocznij Dzisiaj
         </div>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <h2 class="mb-6 leading-tight">
           Gotowa na Transformację z <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-teal-400">Wioletą Literską</span>?
         </h2>
-        <p class="text-xl md:text-2xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
           Umów się na konsultację i dowiedz się, jak nasze usługi mogą poprawić Twój wygląd.
         </p>
         

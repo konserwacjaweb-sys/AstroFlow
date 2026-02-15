@@ -26,7 +26,7 @@ export default function RFQForm() {
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-blue-600 to-teal-600 flex items-center justify-center mr-3">
             <User className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-gray-900">
             Contact Information
           </h2>
         </div>
@@ -100,7 +100,7 @@ export default function RFQForm() {
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center mr-3">
             <Building2 className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="font-bold text-gray-900">
             Company Information
           </h2>
         </div>
@@ -152,7 +152,7 @@ export default function RFQForm() {
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-green-600 to-emerald-600 flex items-center justify-center mr-3">
             <Briefcase className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="font-bold text-gray-900">
             Service Requirements
           </h2>
         </div>
@@ -278,7 +278,7 @@ export default function RFQForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </button>
-        <p className="text-sm text-gray-500 text-center mt-4">
+        <p className="text-gray-500 text-center mt-4">
           By submitting this form, you agree to our Privacy Policy and Terms of
           Service.
         </p>

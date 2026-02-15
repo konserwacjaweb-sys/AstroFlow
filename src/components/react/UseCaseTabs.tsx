@@ -90,7 +90,7 @@ export default function UseCaseTabs({ useCases }: Props) {
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                    <h2 className="mb-2">
                       {useCase.industry}
                     </h2>
                   </div>
@@ -104,7 +104,7 @@ export default function UseCaseTabs({ useCases }: Props) {
                       <div className="flex items-start gap-3">
                         <AlertCircle className="w-6 h-6 text-red-600 shrink-0 mt-0.5" />
                         <div>
-                          <h3 className="text-lg font-bold text-red-900 mb-2">
+                          <h3 className="text-red-900 mb-2">
                             Challenge
                           </h3>
                           <p className="text-gray-700 leading-relaxed">
@@ -119,7 +119,7 @@ export default function UseCaseTabs({ useCases }: Props) {
                       <div className="flex items-start gap-3">
                         <Lightbulb className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
                         <div>
-                          <h3 className="text-lg font-bold text-blue-900 mb-2">
+                          <h3 className="text-blue-900 mb-2">
                             Solution
                           </h3>
                           <p className="text-gray-700 leading-relaxed">
@@ -131,7 +131,7 @@ export default function UseCaseTabs({ useCases }: Props) {
 
                     {/* Results */}
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
                         <CheckCircle2 className="w-5 h-5 text-green-600" />
                         Results
                       </h3>
