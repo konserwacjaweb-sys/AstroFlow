@@ -17,8 +17,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-  font-size: clamp(3.6rem, 5.5vw, 7.2rem);
-  line-height: 1.1;
+  font-size: clamp(4.25rem, 6.5vw, 8.5rem);
+  line-height: 0.95;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -43,7 +43,7 @@ h4 {
 
 p {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.5;
 }
