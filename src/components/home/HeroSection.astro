@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import HeroButtons from '../react/HeroButtons';
-import heroImage from '../../assets/makijaz_permanentny_koscierzyna_beauty.jpg';
+import heroImage from '../../assets/back-1.jpg';
 
 export interface Props {
   heading?: string;
@@ -29,7 +29,7 @@ const {
 
   <!-- Content -->
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="flex flex-col items-center sm:items-start text-center sm:text-left max-w-3xl">
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
       <!-- Heading -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 drop-shadow-lg">
         {heading}
@@ -44,45 +44,4 @@ const {
       <HeroButtons client:idle />
     </div>
   </div>
-
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-white/60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  </div>
 </section>
-
-<style define:vars={{}}>
-  section h1 {
-    animation: fadeInUp 0.8s ease-out;
-  }
-
-  section p {
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .animate-bounce {
-    animation: bounce 2s infinite;
-  }
-</style>

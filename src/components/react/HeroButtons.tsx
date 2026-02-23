@@ -13,14 +13,14 @@ export default function HeroButtons({ onMakijazClick, onUstaClick }: HeroButtons
         className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-secondary-600 text-white hover:bg-secondary-700"
         type="button"
       >
-        💄 Makijaz Permanentny
+        Makijaz Permanentny
       </button>
       <button
         onClick={onUstaClick}
         className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-primary-800 text-white hover:bg-primary-900"
         type="button"
       >
-        ✨ Powiększanie Ust
+        Powiększanie Ust
       </button>
     </div>
   );
