@@ -12,7 +12,7 @@ export default {
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
-      heading: ['Cormorant Garamond', 'serif'],
+      heading: ['Playfair Display', 'serif'],
       sans: ['Poppins', 'sans-serif'],
     },
     colors: {
