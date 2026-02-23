@@ -10,14 +10,14 @@ export default function HeroButtons({ onMakijazClick, onUstaClick }: HeroButtons
     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
       <button
         onClick={onMakijazClick}
-        className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-secondary-600 text-white hover:bg-secondary-700"
+        className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 px-6 py-4 text-normal bg-secondary-600 text-white hover:bg-secondary-700"
         type="button"
       >
         Makijaz Permanentny
       </button>
       <button
         onClick={onUstaClick}
-        className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-primary-800 text-white hover:bg-primary-900"
+        className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 px-6 py-4 text-normal bg-primary-800 text-white hover:bg-primary-900"
         type="button"
       >
         Powiększanie Ust
