@@ -20,11 +20,11 @@ export default function SliderControls({ slides }: SliderControlsProps) {
       {/* Wrapper - obok siebie na lg, pod sobą na mobile (karuzela na górze) */}
       <div className="flex flex-col-reverse lg:flex-row gap-1 lg:gap-0 w-full h-[400px] lg:h-[600px]">
         {/* Opis */}
-        <div className="flex flex-col justify-center px-10 py-10 lg:p-12 bg-[oklch(0.96_0_0/0.5)] rounded-3xl flex-1">
+        <div className="flex flex-col justify-center px-24 py-24 bg-[oklch(0.96_0_0/0.5)] rounded-3xl flex-1">
           <div className="space-y-4">
-                  <h2 className="text-slate-900">
+            <h3 className="text-slate-900 mb-8">
               {slides[activeSlide].title}
-            </h2>
+            </h3>
             
             <p className="text-slate-900 leading-relaxed">
               {slides[activeSlide].description}
@@ -61,9 +61,9 @@ export default function SliderControls({ slides }: SliderControlsProps) {
                 >
                   {/* Tytuł na dole */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/60 to-transparent">
-                        <h2 className="text-white">
+                        <h4 className="text-white">
                       {slide.title}
-                    </h2>
+                    </h4>
                   </div>
                 </button>
               );
@@ -78,10 +78,10 @@ export default function SliderControls({ slides }: SliderControlsProps) {
           <button
             key={index}
             onClick={() => setActiveSlide(index)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
+            className={`carousel-dot ${
               activeSlide === index 
-                ? 'w-8 bg-blue-600' 
-                : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                ? 'active expanded' 
+                : 'collapsed'
             }`}
             aria-label={`Przejdź do slajdu ${index + 1}`}
           />

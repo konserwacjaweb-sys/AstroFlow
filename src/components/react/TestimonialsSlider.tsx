@@ -4,7 +4,6 @@ interface Testimonial {
   quote: string;
   name: string;
   role: string;
-  imageSrc: string;
   ringColor?: string;
 }
 
@@ -37,7 +36,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
             }`}
             style={{ transitionProperty: 'opacity' }}
           >
-            <div className="bg-[#2C3E44] rounded-3xl p-8 lg:p-12 h-full flex flex-col items-center justify-center text-center space-y-6" style={{ willChange: 'opacity' }}>
+            <div className="bg-[#3b5b63] rounded-3xl p-8 lg:p-12 h-full flex flex-col items-center justify-center text-center space-y-6" style={{ willChange: 'opacity' }}>
               {/* Quote Icon */}
               <div className="text-white opacity-20">
                 <svg 
@@ -69,7 +68,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
       <div className="flex items-center justify-center gap-4 mt-8">
         <button
           onClick={() => setActiveSlide((current) => (current - 1 + testimonials.length) % testimonials.length)}
-          className="p-3 text-slate-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+          className="btn"
           aria-label="Poprzednia opinia"
         >
           <svg 
@@ -93,10 +92,10 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
             <button
               key={index}
               onClick={() => setActiveSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`carousel-dot ${
                 activeSlide === index 
-                  ? 'w-12 bg-blue-600' 
-                  : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  ? 'active expanded' 
+                  : 'collapsed'
               }`}
               aria-label={`Przejdź do opinii ${index + 1}`}
             />
@@ -105,7 +104,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
 
         <button
           onClick={() => setActiveSlide((current) => (current + 1) % testimonials.length)}
-          className="p-3 text-slate-900 hover:bg-blue-50 transition-all duration-300"
+          className="btn"
           aria-label="Następna opinia"
         >
           <svg 

@@ -73,7 +73,7 @@ export default function FeatureShowcase() {
         {/* Content - tylko dla kart bez obrazu */}
         {!showImage && (
           <div className="py-15 px-10 text-slate-900">
-            <h3 className="mb-4 leading-normal">{feature.title}</h3>
+            <h3 className="!text-[2.1rem] mb-6 leading-normal">{feature.title}</h3>
             <p className="text-slate-900 opacity-90">{feature.description}</p>
           </div>
         )}

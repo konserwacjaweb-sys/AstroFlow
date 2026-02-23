@@ -20,8 +20,9 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   };
 
   return (
-    <div className="rounded-4xl py-10 flex flex-col items-center justify-center p-6 bg-cyan-950 w-full">
-      <div className="relative w-[70%] mx-auto">
+    <div className="rounded-4xl py-10 flex flex-col items-center justify-center bg-[#3b5b63] w-full">
+      <div className="relative w-[70%] mx-auto p-6">
+
         {/* Karuzela z białą ramką */}
         <div className="relative w-full aspect-4/3 overflow-hidden border-20 border-white rounded-lg">
           {images.map((image, index) => (
@@ -65,12 +66,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       </p>
       
       {/* Button do galerii */}
-      <a href="/galeria" className="inline-flex mt-4 items-center px-6 py-5 text-base font-semibold text-white bg-linear-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 rounded-lg shadow-lg hover:shadow-xl transition-all group"
-      >
+      <a href="/galeria" className="btn">
         Zobacz galerię
-        <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
       </a>
     </div>
   );

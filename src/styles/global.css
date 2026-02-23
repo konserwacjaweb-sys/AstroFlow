@@ -5,12 +5,19 @@
   --font-heading: "Cormorant Garamond", serif;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  font-weight: 300;
 }
 
 h2 {
-  font-size: clamp(2.6rem, 4.1vw, 4.1rem);
+  font-size: clamp(2.6rem, 4.1vw, 5.1rem);
   line-height: 1.15;
   font-weight: 300;
 }
@@ -28,8 +35,10 @@ h4 {
 }
 
 p {
-  font-size: 1.05rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .font-poppins {
@@ -50,10 +59,6 @@ p {
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;
-}
-
-.nav-active {
-  @apply after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-blue-300 hover:after:bg-transparent after:rounded-full;
 }
 
 /* Animations */
@@ -86,7 +91,7 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #2563eb, #0d9488);
+  background: linear-gradient(to right, #2563eb, #3b5b63);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -103,10 +108,14 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: #3b5b63;
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
   animation: slideDown 0.4s ease-out;
+}
+
+.site-header.is-sticky .top-bar {
+  display: none;
 }
 
 @keyframes slideDown {
@@ -121,12 +130,12 @@ html {
 }
 
 .site-header.is-sticky .nav-link {
-  color: rgb(51 65 85);
+  color: rgb(255 255 255);
 }
 
 .site-header.is-sticky .nav-link:hover {
-  color: rgb(37 99 235);
-  background: rgb(239 246 255);
+  color: #aac3c9;
+  background: #3b5b63;
 }
 
 .header-logo {
@@ -228,4 +237,33 @@ html {
   .logo-item {
     min-width: 120px;
   }
+}
+
+/* Carousel/Slider Dots - Global Styling */
+.carousel-dot {
+  @apply h-5 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400;
+}
+
+.carousel-dot.active {
+  @apply bg-[#3b5b63];
+}
+
+.carousel-dot.expanded {
+  @apply w-10;
+}
+
+.carousel-dot.collapsed {
+  @apply w-2 hover:bg-slate-400;
+}
+
+/* Global Button Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-4 text-base font-normal rounded-[13px] transition-all;
+  color: #3b5b63;
+  background-color: white;
+}
+
+.btn:hover {
+  background-color: #3b5b63;
+  color: white;
 }

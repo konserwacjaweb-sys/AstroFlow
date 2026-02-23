@@ -1,8 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import testimonial1Img from '@assets/photo-1494790108377-be9c29b29330.jpg';
-import testimonial2Img from '@assets/photo-1507003211169-0a1dd7228f2d.jpg';
-import testimonial3Img from '@assets/photo-1438761681033-6461ffad8d80.jpg';
 import opinieImg from '@assets/opinie.jpg';
 import TestimonialsSlider from '../react/TestimonialsSlider.tsx';
 
@@ -11,41 +8,37 @@ const testimonials = [
     quote: "Profesjonalizm na najwyższym poziomie. Makijaż permanentny brwi wykonany perfekcyjnie, naturalny efekt który utrzymuje się już rok. Serdecznie polecam!",
     name: "Anna Kowalska",
     role: "Klientka",
-    imageSrc: testimonial1Img.src,
     ringColor: "ring-blue-200" 
   },
   {
     quote: "Wspaniałe doświadczenie! Powiększanie ust było bezbolesne, a efekt jest dokładnie taki jak sobie wymarzyłam. Wioleta jest prawdziwym profesjonalistą.",
     name: "Magdalena Nowak",
     role: "Klientka",
-    imageSrc: testimonial2Img.src,
     ringColor: "ring-teal-200"
   },
   {
     quote: "Najlepsza inwestycja w siebie! Po zabiegu makijażu permanentnego ust oszczędzam mnóstwo czasu każdego ranka. Efekt naturalny i trwały.",
     name: "Karolina Wiśniewska",
     role: "Klientka",
-    imageSrc: testimonial3Img.src,
     ringColor: "ring-blue-200"
   },
   {
     quote: "Niezwykły profesjonalizm i dbałość o szczegóły. Makijaż permanentny wykonany z dużą precyzją. Przesłoma różnica w wyglądzie!",
     name: "Justyna Lewandowska",
     role: "Klientka",
-    imageSrc: opinieImg.src,
     ringColor: "ring-purple-200"
   }
 ];
 ---
 
-<section class="py-24 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section class="container mx-auto py-32 ">
+  <div class="px-4 sm:px-6 lg:py-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Pierwsza kolumna: Obraz z tekstem */}
       <div class="rounded-4xl">
         <div 
-          class="relative h-full min-h-[400px] lg:min-h-[500px] rounded-4xl bg-cover bg-center"
-          style={`background-image: url(${testimonial1Img.src})`}
+          class="relative h-full min-h-[600px] lg:min-h-[600px] rounded-4xl bg-cover bg-center"
+          style={`background-image: url(${opinieImg.src})`}
         >
           <div class="absolute bottom-0 left-0 right-0 p-8 text-white rounded-b-4xl">
             <span class="text-sm uppercase tracking-wide">

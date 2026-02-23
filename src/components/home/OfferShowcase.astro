@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import logo from '@assets/logo_jednolite.png';
 import img1 from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
 import img2 from '@assets/photo-1460925895917-afdab827c52f.jpg';
@@ -16,50 +16,58 @@ const links = [
 ];
 ---
 
-<section class="min-h-[600px] py-16 lg:py-24">
-  <div class="container mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 items-stretch">
+<section class="container mx-auto min-h-[600px]">
+  <div class="py-32 px-4 sm:px-6 lg:py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center items-stretch">
       {/* Left Column - Astro Island Layout */}
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-[200px]">
         {/* Item 1 - High, column 1, rows 1-2 */}
         <div 
           class="rounded-3xl overflow-hidden shadow-lg lg:row-span-2"
-          style={{
-            backgroundImage: `url(${img1.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
+        >
+          <Image 
+            src={img1}
+            alt="Makijaż permanentny brwi"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
 
         {/* Item 2 - Low, column 2, row 1 */}
         <div 
           class="rounded-3xl overflow-hidden shadow-lg"
-          style={{
-            backgroundImage: `url(${img2.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
+        >
+          <Image 
+            src={img2}
+            alt="Zabiegi upiększające"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
 
         {/* Item 4 - High, column 2, rows 2-3 */}
         <div 
           class="rounded-3xl overflow-hidden shadow-lg lg:row-span-2"
-          style={{
-            backgroundImage: `url(${img4.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
+        >
+          <Image 
+            src={img4}
+            alt="Powiększanie ust"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
 
         {/* Item 3 - Low, column 1, row 3 */}
         <div 
           class="rounded-3xl overflow-hidden shadow-lg"
-          style={{
-            backgroundImage: `url(${img3.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
+        >
+          <Image 
+            src={img3}
+            alt="Styling i konsultacje"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       {/* Right Column - Content */}
@@ -68,9 +76,10 @@ const links = [
         <div>
           {/* Logo */}
           <div class="mb-6 h-20 w-auto">
-            <img 
-              src={logo.src} 
-              alt="Logo" 
+            <Image 
+              src={logo}
+              alt="Logo Wioleta Literska"
+              loading="eager"
               class="h-full w-auto object-contain"
             />
           </div>
@@ -81,7 +90,7 @@ const links = [
           </h2>
 
           {/* Description */}
-          <p class="text-slate-600 leading-relaxed mb-8">
+          <p class="text-slate-900 leading-relaxed mb-8">
             Oferujemy kompleksowe usługi makijażu permanentnego i upiększającego zabiegi dla pani cery.
           </p>
 
@@ -90,8 +99,7 @@ const links = [
             {links.map((link) => (
               <a 
                 href={link.href}
-                class="text-sm lg:text-base font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors py-1 px-2 rounded-lg hover:bg-slate-50"
-              >
+                class="text-sm lg:text-base font-normal text-[#3b5b63] hover:text-[#50747d] hover:underline transition-colors py-1 px-2 rounded-lg">
                 {link.label}
               </a>
             ))}
@@ -101,12 +109,8 @@ const links = [
         {/* Button - Bottom */}
         <a 
           href="/oferta"
-          class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-lg hover:shadow-xl transition-all group w-full"
-        >
+          class="btn">
           Odkryj pełną ofertę
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
         </a>
       </div>
     </div>

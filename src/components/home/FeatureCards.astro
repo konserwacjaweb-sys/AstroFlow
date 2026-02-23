@@ -28,8 +28,8 @@ const cards = [
 ];
 ---
 
-<section class="py-16 lg:py-24 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section class="container mx-auto py-32 ">
+  <div class="px-4 sm:px-6 lg:py-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {cards.map((card) => (
         <a 
@@ -47,13 +47,13 @@ const cards = [
           />
           
           {/* Overlay */}
-          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/70 transition-all duration-300"></div>
+          <div class="absolute inset-0  bg-black/40 group-hover:from-black/70 transition-all duration-300"></div>
           
           {/* Content */}
-          <div class="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
-            <h3 class="text-white group-hover:text-blue-200 transition-colors duration-300">
+          <div class="absolute inset-0 flex flex-col items-center justify-center p-6 lg:p-8 text-center">
+            <h4 class="text-white group-hover:text-blue-200 transition-colors duration-300">
               {card.title}
-            </h3>
+            </h4>
           </div>
         </a>
       ))}

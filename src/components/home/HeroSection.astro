@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import HeroButtons from '../react/HeroButtons';
+import heroImage from '../../assets/makijaz_permanentny_koscierzyna_beauty.jpg';
+
+export interface Props {
+  heading?: string;
+  subheading?: string;
+}
+
+const {
+  heading = "Piękno w Każdym Detalu",
+  subheading = "Profesjonalne usługi makijażu permanentnego i powiększania ust",
+} = Astro.props;
+---
+
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Image -->
+  <Image
+    src={heroImage}
+    alt="Makijaz permanentny"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    quality="high"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left max-w-3xl">
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 drop-shadow-lg">
+        {heading}
+      </h1>
+
+      <!-- Subheading -->
+      <p class="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 drop-shadow-md max-w-2xl">
+        {subheading}
+      </p>
+
+      <!-- Buttons -->
+      <HeroButtons client:idle />
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/60" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+
+<style define:vars={{}}>
+  section h1 {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  section p {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+</style>

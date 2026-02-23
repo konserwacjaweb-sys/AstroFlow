@@ -1,13 +1,13 @@
 ---
 interface Props {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'default';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   class?: string;
 }
 
 const {
-  variant = 'primary',
+  variant = 'default',
   size = 'md',
   href,
   class: className = ''
@@ -18,13 +18,14 @@ const baseStyles = 'inline-flex items-center justify-center font-semibold rounde
 const variantStyles = {
   primary: 'bg-primary-800 text-white hover:bg-primary-900',
   secondary: 'bg-secondary-600 text-white hover:bg-secondary-700',
-  outline: 'border-2 border-primary-800 text-primary-800 hover:bg-primary-50'
+  outline: 'border-2 border-navyblue-800 text-primary-800 hover:bg-primary-50',
+  default: 'text-[#3b5b63] bg-white hover:bg-[#3b5b63] hover:text-white'
 };
 
 const sizeStyles = {
   sm: 'px-4 py-2 text-sm',
   md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg'
+  lg: 'px-6 py-4 text-normal'
 };
 
 const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;

@@ -46,7 +46,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <div class="flex items-center header-logo">
       <a href="/" class="flex items-center group">
         <img
-          src="/logo_jednolite.png"
+          src="/white-circle-logo.png"
           alt="Wioleta Literska Logo"
           class="object-contain"
           width="123"
@@ -62,7 +62,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       {NAVIGATION.map((item) => {
         const isActive = isActiveLink(item.href);
         return (
-<a href={item.href} class={`nav-link px-4 py-2 text-[1.0625rem] font-normal text-white hover:text-blue-400 hover:bg-white/10 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a> ); })}
+<a href={item.href} class={`nav-link mx-10 px-4 py-2 text-[1.0625rem] font-normal text-white hover:text-blue-400 hover:bg-white/10 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a> ); })}
     </div>
 
     <div class="hidden lg:flex lg:items-center">
@@ -70,7 +70,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       <div>
         <a
           href="/kontakt"
-          class="inline-flex items-center px-6 py-2.5 text-[1.0625rem] font-normal text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transition-all"
+          class="inline-flex items-center px-6 py-2.5 text-[1.0625rem] font-normal text-white bg-white rounded-[13px] hover:shadow-lg transition-all"
         >
           Kontakt
         </a>
