@@ -2,17 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/ui/Section.astro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSparkles, faGift, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faGift } from '@fortawesome/free-solid-svg-icons';
 ---
 
 <BaseLayout>
   <main>
     <!-- Hero Section -->
-    <Section class="bg-gradient-to-br from-secondary-100 to-secondary-200 py-20">
+    <Section class="bg-linear-to-br from-secondary-100 to-secondary-200 py-20">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-4xl mx-auto">
           <div class="inline-flex items-center gap-3 mb-6">
-            <FontAwesomeIcon icon={faSparkles} className="h-12 w-12 text-secondary-600" />
+            <FontAwesomeIcon icon={faStar} className="h-12 w-12 text-secondary-600" />
           </div>
           <h1 class="text-5xl md:text-6xl font-bold text-primary-900 mb-6">
             Oferty Specjalne
@@ -69,7 +69,7 @@ import { faSparkles, faGift, faStar } from '@fortawesome/free-solid-svg-icons';
           <!-- Oferta 3 -->
           <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
             <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-6">
-              <FontAwesomeIcon icon={faSparkles} className="h-8 w-8 text-secondary-600" />
+              <FontAwesomeIcon icon={faStar} className="h-8 w-8 text-secondary-600" />
             </div>
             <h3 class="text-2xl font-bold text-primary-900 mb-4">
               Voucher Prezentowy

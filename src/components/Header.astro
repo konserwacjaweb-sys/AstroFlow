@@ -3,7 +3,7 @@ import { NAVIGATION } from '@config/site';
 
 import { Phone } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faSparkles, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import MobileMenu from '@components/react/MobileMenu';
 
 const { currentPathname } = Astro.props;
@@ -22,7 +22,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
             href="/specjalne"
             class="hidden lg:inline-flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors"
           >
-            <FontAwesomeIcon icon={faSparkles} className="h-4 w-4" />
+            <FontAwesomeIcon icon={faStar} className="h-4 w-4" />
             <span>Oferty Specjalne</span>
           </a>
           <a
