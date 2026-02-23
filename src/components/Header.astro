@@ -14,7 +14,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
   <!-- Top Bar -->
   <div class="top-bar border-b border-slate-200 bg-slate-50 w-full">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-10 items-center justify-between text-sm">
+      <div class="flex h-10 items-center justify-end text-sm">
         <div class="flex items-center gap-6">
           <a
             href="https://maps.app.goo.gl/sGgGBwZ52NhQ6kCN9"
@@ -31,13 +31,6 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
             <span>+48 123 456 789</span>
           </a>
         </div>
-        <a
-          href="mailto:kontakt@wioletaliterska.pl"
-          class="hidden sm:inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
-        >
-          <Mail className="h-4 w-4" />
-          <span>kontakt@wioletaliterska.pl</span>
-        </a>
       </div>
     </div>
   </div>
@@ -70,7 +63,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       <div>
         <a
           href="/kontakt"
-          class="inline-flex items-center px-6 py-2.5 text-[1.0625rem] font-normal text-white bg-white rounded-[13px] hover:shadow-lg transition-all"
+          class="inline-flex items-center px-6 py-2.5 text-[1.0625rem] font-normal text-slate-900 bg-white rounded-[13px] hover:shadow-lg transition-all"
         >
           Kontakt
         </a>
