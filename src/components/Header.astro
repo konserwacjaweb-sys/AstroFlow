@@ -57,7 +57,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       {NAVIGATION.map((item) => {
         const isActive = isActiveLink(item.href);
         return (
-<a href={item.href} class={`nav-link mx-10 px-4 py-2 text-[1.0625rem] font-normal text-white hover:text-blue-400 hover:bg-white/10 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a> ); })}
+<a href={item.href} class={`nav-link mx-2 px-4 py-2 text-[1.0625rem] font-normal text-white hover:text-blue-400 hover:bg-white/10 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a> ); })}
     </div>
 
     <div class="hidden lg:flex lg:items-center">
