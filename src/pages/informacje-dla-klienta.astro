@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo, faClock, faShieldHalved, faFileContract, faHeartPulse, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+---
+
+<BaseLayout>
+  <main>
+    <!-- Hero Section -->
+    <Section class="bg-gradient-to-br from-primary-100 to-primary-200 py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-3 mb-6">
+            <FontAwesomeIcon icon={faCircleInfo} className="h-12 w-12 text-primary-800" />
+          </div>
+          <h1 class="text-5xl md:text-6xl font-bold text-primary-900 mb-6">
+            Informacje dla Klienta
+          </h1>
+          <p class="text-xl text-primary-700">
+            Wszystko, co powinieneś wiedzieć przed wizytą
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Informacje Section -->
+    <Section class="py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <!-- Przed zabiegiem -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
+              <FontAwesomeIcon icon={faCalendarCheck} className="h-8 w-8 text-primary-800" />
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Przed Zabiegiem
+            </h3>
+            <ul class="space-y-3 text-primary-700">
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Za 24h przed zabiegiem unikaj alkoholu i kawy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Nie stosuj aspiryny i leków przeciwzakrzepowych</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Przyjdź bez makijażu w okolicy zabiegu</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Zjedz lekki posiłek przed wizytą</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Po zabiegu -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-6">
+              <FontAwesomeIcon icon={faHeartPulse} className="h-8 w-8 text-secondary-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Po Zabiegu
+            </h3>
+            <ul class="space-y-3 text-primary-700">
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Przez 7 dni unikaj basenu, sauny i solarium</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Nie zdrapuj strupków - odpadną same</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Regularnie stosuj zalecony krem pielęgnacyjny</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Unikaj bezpośredniego nasłonecznienia</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Czas trwania -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
+              <FontAwesomeIcon icon={faClock} className="h-8 w-8 text-primary-800" />
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Czas Trwania Zabiegów
+            </h3>
+            <ul class="space-y-3 text-primary-700">
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span><strong>Brwi:</strong> 1.5 - 2 godziny</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span><strong>Usta:</strong> 2 - 2.5 godziny</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span><strong>Kreska:</strong> 1.5 - 2 godziny</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span><strong>Korekta:</strong> 1 - 1.5 godziny</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bezpieczeństwo -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-6">
+              <FontAwesomeIcon icon={faShieldHalved} className="h-8 w-8 text-secondary-600" />
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Bezpieczeństwo
+            </h3>
+            <ul class="space-y-3 text-primary-700">
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Jednorazowe sterylne igły i osłonki</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Certyfikowane pigmenty najwyższej jakości</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Dezynfekcja i sterylizacja sprzętu</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-secondary-600 mt-1">•</span>
+                <span>Przestrzeganie norm sanitarno-epidemiologicznych</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Przeciwwskazania -->
+        <div class="bg-red-50 rounded-lg p-8 mb-16">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
+            <FontAwesomeIcon icon={faFileContract} className="h-8 w-8 text-red-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-red-900 mb-4">
+            Przeciwwskazania
+          </h3>
+          <p class="text-red-800 mb-4">
+            Nie wykonujemy zabiegów w przypadku:
+          </p>
+          <ul class="grid md:grid-cols-2 gap-3 text-red-800">
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Ciąży i karmienia piersią</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Chorób skóry w miejscu zabiegu</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Cukrzycy w stanie niewyrównanym</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Hemofilia i zaburzenia krzepnięcia</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Przyjmowania leków immunosupresyjnych</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 mt-1">✕</span>
+              <span>Infekcji wirusowych i bakteryjnych</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-lg p-12">
+          <h3 class="text-3xl font-bold text-primary-900 mb-4">
+            Masz pytania?
+          </h3>
+          <p class="text-xl text-primary-700 mb-8">
+            Skontaktuj się z nami - chętnie odpowiemy na wszystkie Twoje wątpliwości
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-secondary-600 text-white font-semibold rounded-lg hover:bg-secondary-700 transition-colors">
+              Kontakt
+            </a>
+            <a href="/faq" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-800 font-semibold rounded-lg hover:bg-primary-50 transition-colors border-2 border-primary-800">
+              FAQ
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</BaseLayout>
