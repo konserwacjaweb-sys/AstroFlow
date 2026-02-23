@@ -166,10 +166,30 @@ html {
   transition: opacity 200ms ease, transform 200ms ease;
 }
 
+.header-logo img {
+  transition: width 300ms ease, height 300ms ease;
+}
+
+.header-nav {
+  min-height: 160px;
+  transition: min-height 300ms ease;
+}
+
 .site-header.is-sticky .header-logo {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.site-header.is-sticky .header-logo img {
+  width: 123px;
+  height: 70px;
+  transition: width 300ms ease, height 300ms ease;
+}
+
+.site-header.is-sticky .header-nav {
+  min-height: 80px;
+  transition: min-height 300ms ease;
 }
 
 @keyframes imagegrid-left-shrink {
