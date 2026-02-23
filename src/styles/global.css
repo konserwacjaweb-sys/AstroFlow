@@ -153,9 +153,9 @@ html {
 }
 
 .header-logo {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-4px);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
   transition: opacity 200ms ease, transform 200ms ease;
 }
 
