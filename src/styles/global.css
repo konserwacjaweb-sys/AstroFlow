@@ -44,7 +44,24 @@ h4 {
 p {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.7;
+}
+
+.subheading{
+  font-size: clamp(1rem, 1.4vw, 1rem);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+button,
+[data-ui-button],
+.btn {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #999173;
+  background-color: #999173;
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 .font-poppins {
@@ -281,6 +298,7 @@ html {
   gap: 4rem;
   animation: scroll 30s linear infinite;
   width: fit-content;
+  will-change: transform;
 }
 
 .logo-track:hover {
@@ -311,6 +329,13 @@ html {
   
   .logo-item {
     min-width: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+    transform: none;
   }
 }
 

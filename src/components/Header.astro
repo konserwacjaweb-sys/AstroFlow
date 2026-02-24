@@ -1,10 +1,10 @@
 ---
 import { NAVIGATION } from '@config/site';
+import { Image } from 'astro:assets';
+import whiteCircleLogo from '../assets/white-circle-logo.png';
 
-import { Phone } from 'lucide-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import MobileMenu from '@components/react/MobileMenu';
+import TopInfoBar from '@components/home/TopInfoBar.astro';
 
 const { currentPathname } = Astro.props;
 const isActiveLink = (href: string) : boolean => { return href === currentPathname; }
@@ -14,44 +14,48 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 <!-- Nav - nałożona na premium-hero -->
 <header class="site-header absolute top-0 left-0 right-0 z-50 w-full transition-all duration-300" data-site-header>
   <!-- nav container -->
-  <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-2 header-nav">
-    <!-- Logo -->
-    <div class="flex items-center header-logo">
-      <a href="/" class="flex items-center group">
-        <img
-          src="/gold-light-logo.png"
-          alt="Wioleta Literska Logo"
-          class="object-contain"
-          width="246"
-          height="140"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </a>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <div class="hidden lg:flex lg:items-center lg:space-x-1">
-      {NAVIGATION.map((item) => {
-        const isActive = isActiveLink(item.href);
-        return (
-<a href={item.href} class={`nav-link mx-4 px-4 py-2 text-[1.0625rem] font-normal text-white hover:text-[#999173] hover:bg-white/10 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a> ); })}
-    </div>
-
-    <div class="hidden lg:flex lg:items-center">
-      <!-- CTA Button -->
-      <div>
-        <a
-          href="/kontakt"
-          class="inline-flex items-center px-6 py-2.5 text-[1.0625rem] font-normal text-[#999173] border-1 border-[#999173] bg-transparent rounded-[8px] hover:shadow-lg transition-all"
-        >
-          Zarezerwuj termin
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-2 header-nav">
+    <div class="grid w-full grid-cols-[auto_1fr] items-center gap-4 lg:gap-8 py-3">
+      <div class="flex items-center header-logo">
+        <a href="/" class="flex items-center group">
+          <Image
+            src={whiteCircleLogo}
+            alt="Wioleta Literska Logo"
+            class="object-contain"
+            width="194"
+            height="110"
+            loading="eager"
+            quality="high"
+          />
         </a>
       </div>
-    </div>
 
-    <!-- Mobile Menu Button -->
-    <MobileMenu client:idle />
+      <div class="hidden lg:flex flex-col items-end gap-3 py-3">
+        <TopInfoBar inHeader />
+
+        <div class="flex items-center gap-3">
+          <div class="flex items-center lg:space-x-1">
+            {NAVIGATION.map((item) => {
+              const isActive = isActiveLink(item.href);
+              return (
+                <a href={item.href} class={`nav-link mx-2 px-4 py-2 text-[1rem] font-normal text-white hover:text-[#999173] transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a>
+              );
+            })}
+          </div>
+
+          <a
+            href="/kontakt"
+            class="inline-flex items-center px-6 py-2.5 text-[1rem] font-normal text-[#999173] border border-[#999173] bg-transparent rounded-lg transition-all"
+          >
+            Zarezerwuj termin
+          </a>
+        </div>
+      </div>
+
+      <div class="ml-auto lg:hidden">
+        <MobileMenu client:idle />
+      </div>
+    </div>
   </nav>
 </header>
 

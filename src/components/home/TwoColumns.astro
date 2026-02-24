@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets';
+import TwoColumnsBlock from '../react/TwoColumnsBlock';
 import leftBg from '../../assets/Beauty.png';
-import rightBg from '../../assets/powiekszanie_ust_koscierzyna_beauty.jpg';
+import rightBg from '../../assets/m-2.jpg';
 import rightBottomBg from '../../assets/zalety-bg.jpg';
 
 interface Props {
   leftTitle?: string;
   leftText?: string;
+  pText?: string;
   leftButton?: string;
   rightTitle?: string;
   rightText?: string;
@@ -28,33 +30,34 @@ const {
   rightBottomText = 'Precyzyjna korekta proporcji z naturalnym efektem końcowym.',
   rightBottomButton = 'Poznaj szczegóły'
 } = Astro.props;
-
-const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30';
 ---
 
-<section class="w-full overflow-hidden">
+<section class="w-full overflow-hidden ">
   <div class="grid grid-cols-1 md:grid-cols-2">
-    <article class="relative isolate min-h-95 md:min-h-290 overflow-hidden">
+    <article class="relative isolate">
       <Image
         src={leftBg}
         alt="Tło makijażu permanentnego"
-        class="absolute inset-0 h-full w-full object-contain object-[center_120px] sm:object-[center_160px] md:object-[center_200px]"
+        class="absolute inset-0 h-full w-full object-contain object-[center_80px] sm:object-[center_80px] md:object-[center_80px]"
         loading="lazy"
         quality="high"
       />
 
-      <div class="relative z-10 flex h-full flex-col items-start justify-center gap-4 px-40 py-10 sm:px-10 md:px-12 animate-slide-in-left will-change-transform">
-        <span class="max-w-md  text-slate-900">{leftText}</span>
-        <h2 class="text-slate-900">{leftTitle}</h2>
-        <p class="max-w-md  text-slate-900">{pText}</p>
-        <button class={buttonClasses}>
-          {leftButton}
-        </button>
-      </div>
+      <TwoColumnsBlock
+        subtitle={leftText}
+        title={leftTitle}
+        text={pText}
+        buttonLabel={leftButton}
+        className="justify-center px-5 pt-10 pb-20 md:px-20 md:pt-15 md:pb-25 lg:pt-20 lg:pb-30"
+        subtitleClassName="subheading text-slate-900 pb-4"
+        titleClassName="text-slate-900 pb-5"
+        textClassName="max-w-md text-slate-900"
+        buttonClassName="text-white"
+      />
     </article>
 
-    <div class="grid grid-rows-2">
-      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden">
+    <div class="grid grid-rows-2 md:grid-rows-[45%_55%]">
+      <article class="relative isolate md:h-full">
         <Image
           src={rightBg}
           alt="Tło powiększania ust"
@@ -63,16 +66,20 @@ const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-whi
           quality="high"
         />
 
-        <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform">
-          <h2 class="text-white">{rightTitle}</h2>
-          <span class="max-w-md text-sm text-white/90 sm:text-base">{rightText}</span>
-          <button class={buttonClasses}>
-            {rightButton}
-          </button>
-        </div>
+        <div class="absolute inset-0 bg-black/45"></div>
+
+        <TwoColumnsBlock
+          title={rightTitle}
+          text={rightText}
+          buttonLabel={rightButton}
+          className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform"
+          titleClassName="text-white"
+          textClassName="max-w-md text-sm text-white/90 sm:text-base"
+          buttonClassName="text-white"
+        />
       </article>
 
-      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden md:-ml-40 md:z-20 md:border-t-20 md:border-r-20 md:border-l-60 md:border-white">
+      <article class="relative isolate md:h-full md:-ml-40 md:z-20 md:border-t-20 md:border-r-20 md:border-l-20 md:border-white">
         <Image
           src={rightBottomBg}
           alt="Tło modelowania kształtu"
@@ -81,13 +88,17 @@ const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-whi
           quality="high"
         />
 
-        <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right-delayed will-change-transform">
-          <h2 class="text-white">{rightBottomTitle}</h2>
-          <span class="max-w-md text-sm text-white/90 sm:text-base">{rightBottomText}</span>
-          <button class={buttonClasses}>
-            {rightBottomButton}
-          </button>
-        </div>
+        <div class="absolute inset-0 bg-black/45"></div>
+
+        <TwoColumnsBlock
+          title={rightBottomTitle}
+          text={rightBottomText}
+          buttonLabel={rightBottomButton}
+          className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right-delayed will-change-transform"
+          titleClassName="text-white"
+          textClassName="max-w-md text-sm text-white/90 sm:text-base"
+          buttonClassName="text-white"
+        />
       </article>
     </div>
   </div>

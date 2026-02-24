@@ -2,37 +2,55 @@
 import { Phone } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+
+interface Props {
+  inHeader?: boolean;
+}
+
+const { inHeader = false } = Astro.props;
+
+const wrapperClasses = inHeader
+  ? 'flex items-center justify-end text-xs'
+  : 'flex items-center justify-end text-sm sm:text-base';
+
+const rowClasses = inHeader
+  ? 'flex items-center justify-end gap-5'
+  : 'flex flex-wrap items-center justify-center md:justify-end gap-10 sm:gap-6 lg:gap-8 mx-auto py-4 sm:py-12 lg:py-20';
+
+const linkClasses = inHeader
+  ? 'inline-flex items-center gap-3 text-white/90 hover:text-[#999173] transition-colors'
+  : 'inline-flex items-center gap-3 sm:gap-4 text-slate-600 hover:text-blue-600 transition-colors';
 ---
 
-<div class="flex h-10 items-center justify-end text-x1">
-  <div class="flex items-center gap-8 mx-auto py-20">
+<div class={wrapperClasses}>
+  <div class={rowClasses}>
     <a
       href="/specjalne"
-      class="hidden lg:inline-flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors"
+      class={linkClasses}
     >
-      <FontAwesomeIcon icon={faStar} className="h-6 w-6" />
+      <FontAwesomeIcon icon={faStar} className="h-3 w-3" />
       <span>Oferty Specjalne</span>
     </a>
     <a
       href="/informacje-dla-klienta"
-      class="hidden lg:inline-flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors"
+      class={linkClasses}
     >
-      <FontAwesomeIcon icon={faCircleInfo} className="h-4 w-4" />
+      <FontAwesomeIcon icon={faCircleInfo} className="h-3 w-3" />
       <span>Informacje dla Klienta</span>
     </a>
     <a
       href="tel:+48695239434"
-      class="hidden md:inline-flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors"
+      class={linkClasses}
     >
-      <Phone className="h-4 w-4" fill="currentColor" />
-      <span>Gabinet Kościerzyna<br/>+48 695 239 434</span>
+      <Phone className="h-3 w-3" fill="currentColor" />
+      <span>Gabinet Kościerzyna</span>
     </a>
     <a
       href="https://maps.app.goo.gl/sGgGBwZ52NhQ6kCN9"
-      class="inline-flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors"
+      class={linkClasses}
     >
-      <FontAwesomeIcon icon={faLocationDot} className="h-6 w-6" />
-      <span class="hidden sm:inline">Znajdź lokalizację</span>
+      <FontAwesomeIcon icon={faLocationDot} className="h-3 w-3" />
+      <span>Znajdź lokalizację</span>
     </a>
   </div>
 </div>

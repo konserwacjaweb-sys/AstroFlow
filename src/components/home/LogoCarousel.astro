@@ -1,9 +1,43 @@
 ---
-import LogoCarousel from '../react/LogoCarousel.tsx';
+import { Image } from 'astro:assets';
+import logoMain from '../../assets/art-beauty-logo.png';
+import logoCircle from '../../assets/pmugold.png';
+import logoGold from '../../assets/kbcawards.png';
+import logoPmuGold from '../../assets/pmugold.png';
+import logoWhite from '../../assets/white-circle-logo.png';
+
+const logos = [
+  { src: logoMain, alt: 'Wioleta Literska - logo główne' },
+  { src: logoCircle, alt: 'Wioleta Literska - logo okrągłe' },
+  { src: logoGold, alt: 'Wioleta Literska - logo złote' },
+  { src: logoPmuGold, alt: 'Wioleta Literska - PMU Gold logo' },
+  { src: logoWhite, alt: 'Wioleta Literska - logo białe' },
+  { src: logoArt, alt: 'Wioleta Literska - Art Beauty logo' }
+];
+
+const loopedLogos = [...logos, ...logos];
 ---
 
-<section class="py-12 overflow-hidden">
+<section class="py-12 overflow-hidden" aria-label="Karuzela logotypów">
   <div class="container mx-auto">
-    <LogoCarousel client:load />
+    <div class="logo-carousel">
+      <div class="logo-track" role="list">
+        {loopedLogos.map((logo, index) => {
+          const isDuplicate = index >= logos.length;
+
+          return (
+            <div class="logo-item" role="listitem" aria-hidden={isDuplicate ? 'true' : 'false'}>
+              <Image
+                src={logo.src}
+                alt={isDuplicate ? '' : logo.alt}
+                class="h-16 lg:h-20 w-auto object-contain transition-all duration-300"
+                loading="lazy"
+                quality="high"
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   </div>
 </section>
