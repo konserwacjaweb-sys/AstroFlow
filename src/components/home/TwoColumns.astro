@@ -19,6 +19,7 @@ interface Props {
 const {
   leftTitle = 'Makijaż Permanentny',
   leftText = 'Subtelny efekt, który podkreśla Twoje naturalne piękno.',
+  pText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   leftButton = 'Umów wizytę',
   rightTitle = 'Powiększanie Ust',
   rightText = 'Harmonijny kontur i objętość dopasowane do Twoich rysów.',
@@ -37,14 +38,15 @@ const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-whi
       <Image
         src={leftBg}
         alt="Tło makijażu permanentnego"
-        class="absolute inset-0 h-full w-full object-cover object-[center_120px] sm:object-[center_160px] md:object-[center_200px]"
+        class="absolute inset-0 h-full w-full object-contain object-[center_120px] sm:object-[center_160px] md:object-[center_200px]"
         loading="lazy"
         quality="high"
       />
 
-      <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-left will-change-transform">
-        <h2 class="text-white">{leftTitle}</h2>
-        <span class="max-w-md text-sm text-white/90 sm:text-base">{leftText}</span>
+      <div class="relative z-10 flex h-full flex-col items-start justify-center gap-4 px-40 py-10 sm:px-10 md:px-12 animate-slide-in-left will-change-transform">
+        <span class="max-w-md  text-slate-900">{leftText}</span>
+        <h2 class="text-slate-900">{leftTitle}</h2>
+        <p class="max-w-md  text-slate-900">{pText}</p>
         <button class={buttonClasses}>
           {leftButton}
         </button>
@@ -70,7 +72,7 @@ const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-whi
         </div>
       </article>
 
-      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden md:-ml-40 md:z-20 md:border-t-60 md:border-l-60 md:border-white">
+      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden md:-ml-40 md:z-20 md:border-t-20 md:border-r-20 md:border-l-60 md:border-white">
         <Image
           src={rightBottomBg}
           alt="Tło modelowania kształtu"
