@@ -44,7 +44,6 @@ h4 {
 p {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -297,14 +296,4 @@ html {
   @apply w-2 hover:bg-slate-400;
 }
 
-/* Global Button Styles */
-.btn {
-  @apply inline-flex items-center justify-center px-6 py-4 text-base font-normal rounded-[13px] transition-all;
-  color: #3b5b63;
-  background-color: white;
-}
 
-.btn:hover {
-  background-color: #3b5b63;
-  color: white;
-}
