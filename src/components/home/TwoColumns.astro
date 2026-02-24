@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import leftBg from '../../assets/makijaz_permanentny_koscierzyna_beauty.jpg';
+import leftBg from '../../assets/Beauty.png';
 import rightBg from '../../assets/powiekszanie_ust_koscierzyna_beauty.jpg';
+import rightBottomBg from '../../assets/zalety-bg.jpg';
 
 interface Props {
   leftTitle?: string;
@@ -10,6 +11,9 @@ interface Props {
   rightTitle?: string;
   rightText?: string;
   rightButton?: string;
+  rightBottomTitle?: string;
+  rightBottomText?: string;
+  rightBottomButton?: string;
 }
 
 const {
@@ -18,72 +22,71 @@ const {
   leftButton = 'Umów wizytę',
   rightTitle = 'Powiększanie Ust',
   rightText = 'Harmonijny kontur i objętość dopasowane do Twoich rysów.',
-  rightButton = 'Sprawdź ofertę'
+  rightButton = 'Sprawdź ofertę',
+  rightBottomTitle = 'Modelowanie Kształtu',
+  rightBottomText = 'Precyzyjna korekta proporcji z naturalnym efektem końcowym.',
+  rightBottomButton = 'Poznaj szczegóły'
 } = Astro.props;
+
+const buttonClasses = 'inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30';
 ---
 
 <section class="w-full overflow-hidden">
   <div class="grid grid-cols-1 md:grid-cols-2">
-    <article class="relative isolate min-h-[380px] md:min-h-[520px] overflow-hidden">
+    <article class="relative isolate min-h-95 md:min-h-290 overflow-hidden">
       <Image
         src={leftBg}
         alt="Tło makijażu permanentnego"
-        class="absolute inset-0 h-full w-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover object-[center_120px] sm:object-[center_160px] md:object-[center_200px]"
         loading="lazy"
         quality="high"
       />
-      <div class="absolute inset-0 bg-black/45"></div>
 
-      <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 motion-safe:animate-[slideInLeft_900ms_cubic-bezier(0.16,1,0.3,1)_both] will-change-transform">
+      <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-left will-change-transform">
         <h2 class="text-white">{leftTitle}</h2>
         <span class="max-w-md text-sm text-white/90 sm:text-base">{leftText}</span>
-        <button class="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30">
+        <button class={buttonClasses}>
           {leftButton}
         </button>
       </div>
     </article>
 
-    <article class="relative isolate min-h-[380px] md:min-h-[520px] overflow-hidden">
-      <Image
-        src={rightBg}
-        alt="Tło powiększania ust"
-        class="absolute inset-0 h-full w-full object-cover"
-        loading="lazy"
-        quality="high"
-      />
-      <div class="absolute inset-0 bg-black/45"></div>
+    <div class="grid grid-rows-2">
+      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden">
+        <Image
+          src={rightBg}
+          alt="Tło powiększania ust"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          quality="high"
+        />
 
-      <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 motion-safe:animate-[slideInRight_900ms_cubic-bezier(0.16,1,0.3,1)_both] will-change-transform">
-        <h2 class="text-white">{rightTitle}</h2>
-        <span class="max-w-md text-sm text-white/90 sm:text-base">{rightText}</span>
-        <button class="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30">
-          {rightButton}
-        </button>
-      </div>
-    </article>
+        <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform">
+          <h2 class="text-white">{rightTitle}</h2>
+          <span class="max-w-md text-sm text-white/90 sm:text-base">{rightText}</span>
+          <button class={buttonClasses}>
+            {rightButton}
+          </button>
+        </div>
+      </article>
+
+      <article class="relative isolate min-h-95 md:min-h-65 overflow-hidden md:-ml-40 md:z-20 md:border-t-60 md:border-l-60 md:border-white">
+        <Image
+          src={rightBottomBg}
+          alt="Tło modelowania kształtu"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          quality="high"
+        />
+
+        <div class="relative z-10 flex h-full flex-col items-start justify-end gap-4 px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right-delayed will-change-transform">
+          <h2 class="text-white">{rightBottomTitle}</h2>
+          <span class="max-w-md text-sm text-white/90 sm:text-base">{rightBottomText}</span>
+          <button class={buttonClasses}>
+            {rightBottomButton}
+          </button>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-
-<style>
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translate3d(-32px, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translate3d(32px, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-</style>

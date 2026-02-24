@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import HeroButtons from '../react/HeroButtons';
 import heroImage from '../../assets/back-1.jpg';
 
 export interface Props {
@@ -42,7 +41,20 @@ const {
       </p>
 
       <!-- Buttons -->
-      <HeroButtons client:idle />
+      <div class="flex flex-col sm:flex-row gap-20 w-full sm:w-auto">
+        <button
+          class="inline-flex items-center justify-center border-2 border-[#999173] rounded-lg hover:bg-transparent transition-all duration-200 active:scale-95 px-6 py-4 text-base uppercase bg-secondary-600 text-white hover:bg-secondary-700"
+          type="button"
+        >
+          Makijaz Permanentny
+        </button>
+        <button
+          class="inline-flex items-center justify-center rounded-lg bg-[#999173] border-2 border-[#999173] transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 px-6 py-4 text-base uppercase bg-primary-800 text-white hover:bg-primary-900"
+          type="button"
+        >
+          Powiększanie Ust
+        </button>
+      </div>
     </div>
   </div>
 </section>
