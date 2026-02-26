@@ -3,16 +3,11 @@ import { Image } from 'astro:assets';
 import logoMain from '../../assets/art-beauty-logo.png';
 import logoCircle from '../../assets/pmugold.png';
 import logoGold from '../../assets/kbcawards.png';
-import logoPmuGold from '../../assets/pmugold.png';
-import logoWhite from '../../assets/white-circle-logo.png';
 
 const logos = [
   { src: logoMain, alt: 'Wioleta Literska - logo główne' },
   { src: logoCircle, alt: 'Wioleta Literska - logo okrągłe' },
   { src: logoGold, alt: 'Wioleta Literska - logo złote' },
-  { src: logoPmuGold, alt: 'Wioleta Literska - PMU Gold logo' },
-  { src: logoWhite, alt: 'Wioleta Literska - logo białe' },
-  { src: logoArt, alt: 'Wioleta Literska - Art Beauty logo' }
 ];
 
 const loopedLogos = [...logos, ...logos];
@@ -30,7 +25,7 @@ const loopedLogos = [...logos, ...logos];
               <Image
                 src={logo.src}
                 alt={isDuplicate ? '' : logo.alt}
-                class="h-16 lg:h-20 w-auto object-contain transition-all duration-300"
+                class="h-11.25 lg:h-14 w-auto object-contain transition-all duration-300"
                 loading="lazy"
                 quality="high"
               />

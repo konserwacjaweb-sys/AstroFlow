@@ -1,6 +1,7 @@
 interface TwoColumnsBlockProps {
   subtitle?: string;
   title: string;
+  headingTag?: 'h2' | 'h3';
   text?: string;
   buttonLabel?: string;
   className?: string;
@@ -13,6 +14,7 @@ interface TwoColumnsBlockProps {
 export default function TwoColumnsBlock({
   subtitle,
   title,
+  headingTag = 'h2',
   text,
   buttonLabel,
   className = '',
@@ -21,10 +23,12 @@ export default function TwoColumnsBlock({
   textClassName = '',
   buttonClassName = ''
 }: TwoColumnsBlockProps) {
+  const HeadingTag = headingTag;
+
   return (
     <div className={`relative z-10 flex h-full flex-col items-start gap-4 ${className}`}>
       {subtitle ? <span className={subtitleClassName}>{subtitle}</span> : null}
-      <h2 className={titleClassName}>{title}</h2>
+      <HeadingTag className={titleClassName}>{title}</HeadingTag>
       {text ? <p className={textClassName}>{text}</p> : null}
       {buttonLabel ? (
         <button

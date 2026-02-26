@@ -1,15 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../../assets/back-1.jpg';
+import circleGoldBg from '../../assets/circlegoldbg.png';
 
 export interface Props {
   heading?: string;
   subheading?: string;
+  circleHeading?: string;
+  circleSubheading?: string;
 }
 
 const {
   heading = "Piękno w Każdym Detalu",
   subheading = "Profesjonalne usługi makijażu permanentnego & powiększania ust",
+  circleHeading = "Naturalny Efekt",
+  circleSubheading = "Podkreśl swoje piękno subtelnie i elegancko",
 } = Astro.props;
 ---
 
@@ -27,15 +32,37 @@ const {
   <div class="absolute inset-0 bg-black/40"></div>
 
   <!-- Content -->
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32">
-    <div class="flex flex-col items-center text-center max-w-6xl mx-auto">
-      <!-- Heading -->
-      <h1 class="tracking-wider leading-tight text-white mb-4 sm:mb-6 drop-shadow-lg pb-8">
-        Piękno w każdym<br/>
-        <span class="italic lowercase text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Detalu</span>
-      </h1>
-      <p class="text-[1.3rem]! tracking-[0.09em] uppercase font-light text-white/90 mb-8 sm:mb-12 drop-shadow-md max-w-2xl">
-        {subheading}
-      </p>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-40 sm:pt-44 lg:pt-52 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center mx-auto">
+      <div class="text-left">
+        <h1 class="tracking-wider leading-tight text-white mb-4 sm:mb-6 drop-shadow-lg text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          {heading}
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl tracking-[0.06em] uppercase font-light text-white/90 drop-shadow-md max-w-xl mx-0">
+          {subheading}
+        </p>
+      </div>
+
+      <div class="relative w-full h-100">
+        <div class="relative h-100 w-100 mr-auto translate-x-40">
+          <Image
+            src={circleGoldBg}
+            alt="Złote koło dekoracyjne"
+            class="w-full h-full object-contain"
+            loading="eager"
+            quality="high"
+          />
+        </div>
+
+        <div class="absolute inset-y-0 right-0 flex flex-col items-end justify-center text-right">
+          <h2 class="text-white text-2xl sm:text-3xl lg:text-4xl font-medium leading-tight mb-3 max-w-70">
+            {circleHeading}
+          </h2>
+          <p class="text-white/90 text-sm sm:text-base leading-relaxed max-w-65">
+            {circleSubheading}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

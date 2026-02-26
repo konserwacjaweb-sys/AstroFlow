@@ -14,67 +14,82 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 <!-- Nav - nałożona na premium-hero -->
 <header class="site-header absolute top-0 left-0 right-0 z-50 w-full transition-all duration-300" data-site-header>
   <!-- nav container -->
-  <nav class="container mx-auto px-4 sm:px-6 lg:px-2 header-nav">
-    <div class="grid w-full grid-cols-[auto_1fr] items-center gap-4 lg:gap-8 py-3">
-      <div class="flex items-center header-logo">
-        <a href="/" class="flex items-center group">
-          <Image
-            src={whiteCircleLogo}
-            alt="Wioleta Literska Logo"
-            class="object-contain"
-            width="194"
-            height="110"
-            loading="eager"
-            quality="high"
-          />
-        </a>
+  <nav class="container mx-auto px-2 sm:px-3 lg:px-1 header-nav">
+    <div class="flex items-center justify-between py-3 lg:hidden">
+      <a href="/" class="flex items-center group">
+        <Image
+          src={whiteCircleLogo}
+          alt="Wioleta Literska Logo"
+          class="object-contain"
+          width="194"
+          height="110"
+          loading="eager"
+          quality="high"
+        />
+      </a>
+
+      <div class="ml-auto">
+        <MobileMenu client:idle />
+      </div>
+    </div>
+
+    <div class="hidden lg:flex flex-col py-3">
+      <div class="flex justify-end">
+        <TopInfoBar inHeader />
       </div>
 
-      <div class="hidden lg:flex flex-col items-end gap-3 py-3">
-        <TopInfoBar inHeader />
+      <div class="flex w-full items-center justify-between gap-4 xl:gap-6">
+        <div class="flex items-center justify-start header-logo">
+          <a href="/" class="flex items-center group">
+            <Image
+              src={whiteCircleLogo}
+              alt="Wioleta Literska Logo"
+              class="object-contain"
+              width="194"
+              height="110"
+              loading="eager"
+              quality="high"
+            />
+          </a>
+        </div>
 
-        <div class="flex items-center gap-3">
-          <div class="flex items-center lg:space-x-1">
+        <div class="flex min-w-0 items-center justify-end gap-2 xl:gap-3">
+          <div class="flex items-center lg:space-x-0.5 xl:space-x-1">
             {NAVIGATION.map((item) => {
               const isActive = isActiveLink(item.href);
               return (
-                <a href={item.href} class={`nav-link mx-2 px-4 py-2 text-[1rem] font-normal text-white hover:text-[#999173] transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a>
+                <a href={item.href} class={`nav-link mx-1 xl:mx-2 px-2.5 xl:px-4 py-2 text-[0.95rem] xl:text-[1rem] font-normal text-white hover:text-[#999173] transition-all relative group ${isActive ? 'nav-active' : ''}`} > {item.name} </a>
               );
             })}
           </div>
 
           <a
             href="/kontakt"
-            class="inline-flex items-center px-6 py-2.5 text-[1rem] font-normal text-[#999173] border border-[#999173] bg-transparent rounded-lg transition-all"
+            class="inline-flex items-center px-4 xl:px-6 py-2.5 text-[0.95rem] xl:text-[1rem] font-normal text-[#999173] border border-[#999173] bg-transparent rounded-lg transition-all whitespace-nowrap"
           >
             Zarezerwuj termin
           </a>
         </div>
-      </div>
-
-      <div class="ml-auto lg:hidden">
-        <MobileMenu client:idle />
       </div>
     </div>
   </nav>
 </header>
 
 <script>
-  const header = document.querySelector('[data-site-header]');
-  const sections = document.querySelectorAll('main section');
-  const firstSection = sections[0];
+  const siteHeader = document.querySelector<HTMLElement>('[data-site-header]');
+  const firstSection = document.querySelector<HTMLElement>('main section');
 
-  if (header && firstSection) {
+  if (siteHeader && firstSection) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Sticky od drugiej sekcji (po opuszczeniu pierwszej)
-        header.classList.toggle('is-sticky', !entry.isIntersecting);
+        siteHeader.classList.toggle('is-sticky', !entry.isIntersecting);
       },
       { threshold: 0, rootMargin: '0px' }
     );
 
     observer.observe(firstSection);
-  } else if (header) {
-    header.classList.add('is-sticky');
+  } else if (siteHeader) {
+    siteHeader.classList.add('is-sticky');
   }
 </script>
