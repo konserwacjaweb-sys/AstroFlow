@@ -33,24 +33,24 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
       </div>
     </div>
 
-    <div class="hidden lg:flex flex-col py-3">
-      <div class="flex justify-end">
-        <TopInfoBar inHeader />
+    <div class="hidden lg:grid grid-cols-[auto_1fr] items-center gap-6 py-2">
+      <div class="flex items-center justify-start header-logo">
+        <a href="/" class="flex items-center group">
+          <Image
+            src={whiteCircleLogo}
+            alt="Wioleta Literska Logo"
+            class="object-contain"
+            width="194"
+            height="110"
+            loading="eager"
+            quality="high"
+          />
+        </a>
       </div>
 
-      <div class="flex w-full items-center justify-between gap-4 xl:gap-6">
-        <div class="flex items-center justify-start header-logo">
-          <a href="/" class="flex items-center group">
-            <Image
-              src={whiteCircleLogo}
-              alt="Wioleta Literska Logo"
-              class="object-contain"
-              width="194"
-              height="110"
-              loading="eager"
-              quality="high"
-            />
-          </a>
+      <div class="flex min-w-0 flex-col items-end gap-3 xl:gap-4">
+        <div class="flex justify-end">
+          <TopInfoBar inHeader />
         </div>
 
         <div class="flex min-w-0 items-center justify-end gap-2 xl:gap-3">

@@ -133,8 +133,8 @@ html {
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.0509803922);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.0509803922);
+  -webkit-box-shadow: none;
+  box-shadow: none;
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
 }
@@ -187,7 +187,6 @@ html {
 }
 
 .header-nav {
-  min-height: 160px;
   transition: min-height 300ms ease;
 }
 
@@ -204,7 +203,7 @@ html {
 }
 
 .site-header.is-sticky .header-nav {
-  min-height: 80px;
+  min-height: 72px;
   transition: min-height 300ms ease;
 }
 
