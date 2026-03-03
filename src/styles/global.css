@@ -16,13 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-h1{
-  font-size: clamp(4.25rem, 6.5vw, 8.5rem);
-  line-height: 0.95;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
 h2 {
   font-size: clamp(2.6rem, 4.1vw, 5.1rem);
   line-height: 1.15;
@@ -32,13 +25,11 @@ h2 {
 h3 {
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.2;
-  font-weight: 300;
 }
 
 h4 {
   font-size: clamp(1.6rem, 2.2vw, 2.2rem);
   line-height: 1.25;
-  font-weight: 300;
 }
 
 p {
@@ -46,10 +37,18 @@ p {
   font-size: 1rem;
   line-height: 1.7;
 }
-
+.big-w {
+  position: absolute;
+  left: 58%;     /* dopasujesz dokładnie */
+  top: 42%;      /* dopasujesz dokładnie */
+  transform: translate(-50%, -50%);
+  font-size: 420px;
+  opacity: 0.35;
+  line-height: 1;
+  pointer-events: none;
+}
 .subheading{
   font-size: clamp(1rem, 1.4vw, 1rem);
-  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 

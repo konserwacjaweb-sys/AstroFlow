@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import TwoColumnsBlock from '../react/TwoColumnsBlock';
 import leftBg from '../../assets/Beauty.png';
 import rightBg from '../../assets/m-2.jpg';
-import rightBottomBg from '../../assets/zalety-bg.jpg';
 
 interface Props {
   leftTitle?: string;
@@ -13,9 +12,6 @@ interface Props {
   rightTitle?: string;
   rightText?: string;
   rightButton?: string;
-  rightBottomTitle?: string;
-  rightBottomText?: string;
-  rightBottomButton?: string;
 }
 
 const {
@@ -26,22 +22,20 @@ const {
   rightTitle = 'Powiększanie Ust',
   rightText = 'Harmonijny kontur i objętość dopasowane do Twoich rysów.',
   rightButton = 'Sprawdź ofertę',
-  rightBottomTitle = 'Modelowanie Kształtu',
-  rightBottomText = 'Precyzyjna korekta proporcji z naturalnym efektem końcowym.',
-  rightBottomButton = 'Poznaj szczegóły'
 } = Astro.props;
 ---
 
-<section class="w-full overflow-hidden ">
-  <div class="grid grid-cols-1 md:grid-cols-2">
+<section class="relative w-full overflow-hidden">
+  <Image
+    src={leftBg}
+    alt="Tło makijażu permanentnego"
+    class="absolute inset-0 h-full w-full object-contain object-[center_150px]"
+    loading="lazy"
+    quality="high"
+  />
+
+  <div class="relative container mx-auto grid grid-cols-1 md:grid-cols-2">
     <article class="relative isolate">
-      <Image
-        src={leftBg}
-        alt="Tło makijażu permanentnego"
-        class="absolute inset-0 h-full w-full object-contain object-[center_80px] sm:object-[center_80px] md:object-[center_80px]"
-        loading="lazy"
-        quality="high"
-      />
 
       <TwoColumnsBlock
         subtitle={leftText}
@@ -56,52 +50,28 @@ const {
       />
     </article>
 
-    <div class="grid grid-rows-2 md:grid-rows-[45%_55%]">
-      <article class="relative isolate md:h-full">
-        <Image
-          src={rightBg}
-          alt="Tło powiększania ust"
-          class="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
-          quality="high"
-        />
+    <article class="relative isolate md:h-full">
+      <Image
+        src={rightBg}
+        alt="Tło powiększania ust"
+        class="absolute inset-0 h-full w-full object-cover"
+        loading="lazy"
+        quality="high"
+      />
 
-        <div class="absolute inset-0 bg-black/45"></div>
+      <div class="absolute inset-0 bg-black/45"></div>
 
-        <TwoColumnsBlock
-          title={rightTitle}
-          headingTag="h3"
-          text={rightText}
-          buttonLabel={rightButton}
-          className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform"
-          titleClassName="text-white"
-          textClassName="max-w-md text-sm text-white/90 sm:text-base"
-          buttonClassName="text-white uppercase bg-[#999173] hover:bg-[#999173]/90 transition-colors"
-        />
-      </article>
+      <TwoColumnsBlock
+        title={rightTitle}
+        headingTag="h3"
+        text={rightText}
+        buttonLabel={rightButton}
+        className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform"
+        titleClassName="text-white"
+        textClassName="max-w-md text-sm text-white/90 sm:text-base"
+        buttonClassName="text-white uppercase bg-[#999173] hover:bg-[#999173]/90 transition-colors"
+      />
+    </article>
 
-      <article class="relative isolate md:h-full md:-ml-40 md:z-20 md:border-t-20 md:border-r-20 md:border-l-20 md:border-white">
-        <Image
-          src={rightBottomBg}
-          alt="Tło modelowania kształtu"
-          class="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
-          quality="high"
-        />
-
-        <div class="absolute inset-0 bg-black/45"></div>
-
-        <TwoColumnsBlock
-          title={rightBottomTitle}
-          headingTag="h3"
-          text={rightBottomText}
-          buttonLabel={rightBottomButton}
-          className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right-delayed will-change-transform"
-          titleClassName="text-white"
-          textClassName="max-w-md text-sm text-white/90 sm:text-base"
-          buttonClassName="text-white uppercase bg-[#999173] hover:bg-[#999173]/90 transition-colors"
-        />
-      </article>
-    </div>
   </div>
 </section>

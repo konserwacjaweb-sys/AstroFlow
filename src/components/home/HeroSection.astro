@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroImage from '../../assets/bg-2.jpg';
+import heroImage from '../../assets/back-1.jpg';
 import circleGoldBg from '../../assets/circlegoldbg.png';
 
 export interface Props {
@@ -10,12 +10,16 @@ export interface Props {
   circleSubheading?: string;
 }
 
+const defaultHeading = "Piękno w Każdym Detalu";
+
 const {
-  heading = "Piękno w Każdym Detalu",
+  heading = defaultHeading,
   subheading = "Profesjonalne usługi makijażu permanentnego & powiększania ust",
   circleHeading = "Naturalny Efekt",
   circleSubheading = "Podkreśl swoje piękno subtelnie i elegancko",
 } = Astro.props;
+
+const useDefaultHeading = heading === defaultHeading;
 ---
 
 <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
@@ -36,7 +40,13 @@ const {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center mx-auto">
       <div class="text-left">
         <h1 class="tracking-wider leading-tight text-white mb-4 sm:mb-6 drop-shadow-lg text-2xl sm:text-5xl md:text-6xl lg:text-7xl">
-          {heading}
+          {useDefaultHeading ? (
+            <>
+              Piękno <span class="text-white/50 big-w">w</span> Każdym Detalu
+            </>
+          ) : (
+            heading
+          )}
         </h1>
         <p class="text-base sm:text-lg md:text-xl tracking-[0.06em] uppercase font-light text-white/90 drop-shadow-md max-w-xl mx-0">
           {subheading}
