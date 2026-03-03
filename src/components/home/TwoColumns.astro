@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import TwoColumnsBlock from '../react/TwoColumnsBlock';
-import leftBg from '../../assets/Beauty.png';
+import leftBg from '../../assets/beauty-2.png';
 import rightBg from '../../assets/m-2.jpg';
 
 interface Props {
@@ -9,8 +9,6 @@ interface Props {
   leftText?: string;
   pText?: string;
   leftButton?: string;
-  rightTitle?: string;
-  rightText?: string;
   rightButton?: string;
 }
 
@@ -19,9 +17,6 @@ const {
   leftText = 'Subtelny efekt, który podkreśla Twoje naturalne piękno.',
   pText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   leftButton = 'Umów wizytę',
-  rightTitle = 'Powiększanie Ust',
-  rightText = 'Harmonijny kontur i objętość dopasowane do Twoich rysów.',
-  rightButton = 'Sprawdź ofertę',
 } = Astro.props;
 ---
 
@@ -29,7 +24,7 @@ const {
   <Image
     src={leftBg}
     alt="Tło makijażu permanentnego"
-    class="absolute inset-0 h-full w-full object-contain object-[center_150px]"
+    class="absolute inset-0 object-contain w-[65%] h-full"
     loading="lazy"
     quality="high"
   />
@@ -42,35 +37,24 @@ const {
         title={leftTitle}
         text={pText}
         buttonLabel={leftButton}
-        className="justify-center px-5 pt-10 pb-20 md:px-20 md:pt-15 md:pb-25 lg:pt-20 lg:pb-30"
-        subtitleClassName="subheading text-slate-900 pb-4"
+        className="justify-center pt-10 pb-20 md:pt-15 md:pb-25 lg:pt-20 lg:pb-30"
+        subtitleClassName="text-[clamp(1rem,1.4vw,1rem)] uppercase text-slate-900 pb-4"
         titleClassName="text-slate-900 pb-5"
         textClassName="max-w-md text-slate-900"
         buttonClassName="text-white uppercase bg-[#999173] hover:bg-[#999173]/90 transition-colors"
       />
     </article>
 
-    <article class="relative isolate md:h-full">
-      <Image
-        src={rightBg}
-        alt="Tło powiększania ust"
-        class="absolute inset-0 h-full w-full object-cover"
-        loading="lazy"
-        quality="high"
-      />
-
-      <div class="absolute inset-0 bg-black/45"></div>
-
-      <TwoColumnsBlock
-        title={rightTitle}
-        headingTag="h3"
-        text={rightText}
-        buttonLabel={rightButton}
-        className="justify-end px-6 py-10 sm:px-10 md:px-12 animate-slide-in-right will-change-transform"
-        titleClassName="text-white"
-        textClassName="max-w-md text-sm text-white/90 sm:text-base"
-        buttonClassName="text-white uppercase bg-[#999173] hover:bg-[#999173]/90 transition-colors"
-      />
+    <article class="relative isolate flex h-full flex-col md:h-full">
+      <div class="mt-auto px-6 pb-10 sm:px-10 md:px-12">
+        <Image
+          src={rightBg}
+          alt="Powiększanie ust"
+          class="h-64 w-full object-cover sm:h-72 md:h-80"
+          loading="lazy"
+          quality="high"
+        />
+      </div>
     </article>
 
   </div>
