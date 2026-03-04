@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Playfair Display", serif;
+  --font-heading: "Noto Serif Display", serif;
 }
 
 body {
@@ -37,47 +37,8 @@ p {
   font-size: 1rem;
   line-height: 1.7;
 }
-.big-w {
-  position: absolute;
-  left: 58%;     /* dopasujesz dokładnie */
-  top: 42%;      /* dopasujesz dokładnie */
-  transform: translate(-50%, -50%);
-  font-size: 420px;
-  opacity: 0.35;
-  line-height: 1;
-  pointer-events: none;
-}
-.subheading{
-  font-size: clamp(1rem, 1.4vw, 1rem);
-  text-transform: uppercase;
-}
 
-button,
-[data-ui-button],
-.btn {
-  border-width: 2px;
-  border-style: solid;
-  border-color: #999173;
-  background-color: #999173;
-  color: #ffffff;
-  border-radius: 8px;
-}
 
-.font-poppins {
-  font-family: "Poppins", sans-serif;
-}
-
-.font-helvetica {
-  font-family: "Helvetica", "Arial", sans-serif;
-}
-
-.font-playfair {
-  font-family: "Playfair Display";
-}
-
-.font-heading {
-  font-family: var(--font-heading);
-}
 /* Smooth scrolling */
 html {
   @apply scroll-smooth;
@@ -122,88 +83,17 @@ html {
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-bounce {
   animation: bounce 2s infinite;
-}
-
-.site-header {
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: translateY(0);
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-}
-
-.site-header.is-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.0509803922);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.0509803922);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-}
-
-.site-header.is-sticky .top-bar {
-  display: none;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.site-header.is-sticky .nav-link {
-  color: rgb(255 255 255);
-}
-
-.site-header.is-sticky .nav-link:hover {
-  color: #aac3c9;
-  background: #3b5b63;
-}
-
-.header-logo {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  transition: opacity 200ms ease, transform 200ms ease;
-}
-
-.header-logo img {
-  transition: width 300ms ease, height 300ms ease;
-}
-
-.header-nav {
-  transition: min-height 300ms ease;
-}
-
-.site-header.is-sticky .header-logo {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.site-header.is-sticky .header-logo img {
-  width: 123px;
-  height: 70px;
-  transition: width 300ms ease, height 300ms ease;
-}
-
-.site-header.is-sticky .header-nav {
-  min-height: 72px;
-  transition: min-height 300ms ease;
 }
 
 @keyframes imagegrid-left-shrink {
@@ -290,75 +180,6 @@ html {
   .animate-slide-in-right-delayed {
     animation: none;
   }
-}
-/* Logo Carousel */
-.logo-carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.logo-track {
-  display: flex;
-  gap: 4rem;
-  animation: scroll 30s linear infinite;
-  width: fit-content;
-  will-change: transform;
-}
-
-.logo-track:hover {
-  animation-play-state: paused;
-}
-
-.logo-item {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 150px;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 640px) {
-  .logo-track {
-    gap: 2rem;
-  }
-  
-  .logo-item {
-    min-width: 120px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo-track {
-    animation: none;
-    transform: none;
-  }
-}
-
-/* Carousel/Slider Dots - Global Styling */
-.carousel-dot {
-  @apply h-5 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400;
-}
-
-.carousel-dot.active {
-  @apply bg-[#3b5b63];
-}
-
-.carousel-dot.expanded {
-  @apply w-10;
-}
-
-.carousel-dot.collapsed {
-  @apply w-2 hover:bg-slate-400;
 }
 
 

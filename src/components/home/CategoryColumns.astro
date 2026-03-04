@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title?: string;
+}
+
+const { title = 'Wybierz Obszar Zabiegu' } = Astro.props;
+
+const categories = [
+  {
+    label: 'Makijaz Permanentny',
+    href: '/oferta',
+  },
+  {
+    label: 'Powiekszanie Ust',
+    href: '/usta',
+  },
+  {
+    label: 'Cialo',
+    href: '/oferta#cialo',
+  },
+  {
+    label: 'Makijaz',
+    href: '/oferta#makijaz',
+  },
+];
+---
+
+<section class="px-6 py-14 sm:px-8 lg:px-12">
+  <div class="mx-auto w-full max-w-6xl">
+    <h1 class="text-center text-3xl font-light uppercase tracking-[0.14em] text-[#1f1f1f] sm:text-4xl">
+      {title}
+    </h1>
+
+    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599]" />
+
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {categories.map((item) => (
+        <a
+          href={item.href}
+          class="group flex min-h-28 items-center justify-center rounded-sm border border-[#e5dfd0] bg-white px-5 py-6 text-center text-sm font-medium uppercase tracking-[0.16em] text-[#1f1f1f] transition-colors duration-300 hover:border-[#c1b599] hover:bg-[#faf7f0]"
+        >
+          <span class="transition-transform duration-300 group-hover:-translate-y-px">{item.label}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

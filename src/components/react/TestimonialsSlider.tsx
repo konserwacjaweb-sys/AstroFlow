@@ -68,7 +68,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
       <div className="flex items-center justify-center gap-4 mt-8">
         <button
           onClick={() => setActiveSlide((current) => (current - 1 + testimonials.length) % testimonials.length)}
-          className="btn"
+          className="inline-flex items-center justify-center rounded-lg border-2 border-[#999173] bg-[#999173] p-2 text-white transition-colors hover:bg-[#999173]/90"
           aria-label="Poprzednia opinia"
         >
           <svg 
@@ -92,10 +92,10 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
             <button
               key={index}
               onClick={() => setActiveSlide(index)}
-              className={`carousel-dot ${
-                activeSlide === index 
-                  ? 'active expanded' 
-                  : 'collapsed'
+              className={`h-5 rounded-full transition-all duration-300 ${
+                activeSlide === index
+                  ? 'bg-[#3b5b63] w-10'
+                  : 'bg-slate-300 hover:bg-slate-400 w-2'
               }`}
               aria-label={`Przejdź do opinii ${index + 1}`}
             />
@@ -104,7 +104,7 @@ export default function TestimonialsSlider({ testimonials }: TestimonialsSliderP
 
         <button
           onClick={() => setActiveSlide((current) => (current + 1) % testimonials.length)}
-          className="btn"
+          className="inline-flex items-center justify-center rounded-lg border-2 border-[#999173] bg-[#999173] p-2 text-white transition-colors hover:bg-[#999173]/90"
           aria-label="Następna opinia"
         >
           <svg 

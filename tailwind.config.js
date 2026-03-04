@@ -13,6 +13,8 @@ export default {
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       heading: ['Playfair Display', 'serif'],
+      playfair: ['Playfair Display', 'serif'],
+      notoDisplay: ['Noto Serif Display', 'serif'],
       sans: ['Poppins', 'sans-serif'],
     },
     colors: {

@@ -1,9 +1,9 @@
 // Site configuration
 export const SITE = {
-  title: 'AstroFlow',
-  description: 'Leading provider of optimized logistics and manufacturing solutions with state-of-the-art facilities and industry expertise.',
+  title: 'Wioleta Literska - Makijaż Permanentny, powiększanie ust',
+  description: 'Makijaż permanentny Kościerzyna, powiększanie ust Kościerzyna',
   url: 'https://yourdomain.com',
-  author: 'AstroFlow',
+  author: 'Wioleta Literska',
 } as const;
 
 export const NAVIGATION = [
@@ -17,8 +17,6 @@ export const NAVIGATION = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/yourcompany',
-  twitter: 'https://twitter.com/yourcompany',
   facebook: 'https://facebook.com/yourcompany',
 } as const;
 

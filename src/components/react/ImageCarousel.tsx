@@ -66,7 +66,10 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       </p>
       
       {/* Button do galerii */}
-      <a href="/galeria" className="btn">
+      <a
+        href="/galeria"
+        className="inline-flex items-center justify-center rounded-lg border-2 border-[#999173] bg-[#999173] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#999173]/90"
+      >
         Zobacz galerię
       </a>
     </div>

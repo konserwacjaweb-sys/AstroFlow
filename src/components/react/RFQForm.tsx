@@ -271,7 +271,7 @@ export default function RFQForm() {
       <div className="pt-6">
         <button
           type="submit"
-          className="btn"
+          className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#999173] bg-[#999173] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#999173]/90"
         >
           <span>Submit Request</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

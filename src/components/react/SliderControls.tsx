@@ -78,10 +78,10 @@ export default function SliderControls({ slides }: SliderControlsProps) {
           <button
             key={index}
             onClick={() => setActiveSlide(index)}
-            className={`carousel-dot ${
-              activeSlide === index 
-                ? 'active expanded' 
-                : 'collapsed'
+            className={`h-5 rounded-full transition-all duration-300 ${
+              activeSlide === index
+                ? 'bg-[#3b5b63] w-10'
+                : 'bg-slate-300 hover:bg-slate-400 w-2'
             }`}
             aria-label={`Przejdź do slajdu ${index + 1}`}
           />

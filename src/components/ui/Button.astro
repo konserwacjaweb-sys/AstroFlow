@@ -13,13 +13,13 @@ const {
   class: className = ''
 } = Astro.props;
 
-const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95';
+const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 rounded-lg';
 
 const variantStyles = {
-  primary: '',
-  secondary: '',
-  outline: '',
-  default: ''
+  primary: 'border-2 border-[#999173] bg-[#999173] text-white hover:bg-[#999173]/90',
+  secondary: 'border-2 border-[#999173] bg-transparent text-[#999173] hover:bg-[#999173]/10',
+  outline: 'border-2 border-current bg-transparent',
+  default: 'border-2 border-[#999173] bg-[#999173] text-white hover:bg-[#999173]/90'
 };
 
 const sizeStyles = {
@@ -33,6 +33,6 @@ const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${c
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag href={href} class={classes} data-ui-button>
+<Tag href={href} class={classes}>
     <slot />
 </Tag>

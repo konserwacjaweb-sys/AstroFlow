@@ -112,7 +112,7 @@ const faqs = [
         <ImageReveal client:load delay={index * 0.05}>
           <Card hover class="border-2 border-gray-100 hover:border-blue-200 transition-colors">
             <details class="group">
-              <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+              <summary class="flex items-center justify-between cursor-pointer list-none py-2 group-open:mb-2 [&::-webkit-details-marker]:hidden">
                 <h3 class="text-gray-900 pr-4 group-hover:text-blue-600 transition-colors">
                   {faq.question}
                 </h3>
@@ -209,12 +209,3 @@ const faqs = [
   </Section>
 </BaseLayout>
 
-<style>
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-  
-  details[open] summary {
-    margin-bottom: 0.5rem;
-  }
-</style>
