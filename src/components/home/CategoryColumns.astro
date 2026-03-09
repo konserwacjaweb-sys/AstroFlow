@@ -1,8 +1,8 @@
 ---
-import bgMakijazPermanentny from '../../assets/bg-4.jpg';
-import bgPowiekszanieUst from '../../assets/1234.jpg';
-import bgCialo from '../../assets/0987.jpg';
-import bgMakijaz from '../../assets/galeria-bg.jpg';
+import bgMakijazPermanentny from '../../assets/brow-mp.png';
+import bgPowiekszanieUst from '../../assets/powiekszanie-ust.jpeg';
+import bgCialo from '../../assets/body.jpg';
+import bgMakijaz from '../../assets/67.jpg';
 
 export interface Props {
   title?: string;
@@ -12,22 +12,22 @@ const { title = 'Najlepszy makijaż permanentny i powiększanie ust' } = Astro.p
 
 const categories = [
   {
-    label: 'Makijaz Permanentny',
+    label: 'Makijaż Permanentny',
     href: '/oferta',
     background: bgMakijazPermanentny,
   },
   {
-    label: 'Powiekszanie Ust',
+    label: 'Powiększanie Ust',
     href: '/usta',
     background: bgPowiekszanieUst,
   },
   {
-    label: 'Cialo',
+    label: 'Twarz & Ciało',
     href: '/oferta#cialo',
     background: bgCialo,
   },
   {
-    label: 'Makijaz',
+    label: 'Makijaż',
     href: '/oferta#makijaz',
     background: bgMakijaz,
   },
@@ -35,19 +35,23 @@ const categories = [
 ---
 
 <section class="px-6 py-14 sm:px-8 lg:px-12">
-  <div class="mx-auto w-full max-w-6xl max-w-3xl">
+  <div class="mx-auto w-full max-w-5xl">
     <h1 class="font-poppins text-center tracking-[0.5em] text-md font-medium uppercase text-[#baa586]">
       {title}
     </h1>
 
     <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599] my-10" />
 
+    <p class="text-4xl leading-relaxed mt-4 font-poppins font-extralight">
+      Wioleta Literska certyfikowana lingeristka w Kościerzynie,
+      <span class="italic">Master Permanent Make Up i Modelowania Ust.</span>
     </p>
-    <p class="text-4xl leading-relaxed mt-4 font-poppins font-extralight">Wioleta Literska certyfikowana lingeristka w Kościerzynie, Master Permanent Make Up i Powiększania Ust.</p>
 
-    <p class="mx-auto my-9 first-letter:text-8xl first-letter:float-left first-letter:mr-4 first-letter:mt-1 first-letter:font-serif first-letter:leading-[0.8] ">
-      Wioleta Literska jest certyfikowaną lingeristką, ukończyła Akademie Makijażu Permanentnego. Jurorka w Mistrzowstwach Art Beauty w powiększaniu ust. Jurorka i honorowy prelegent w Międzynarodowych Mistrzowastwach branży beauty KBC Awards w Kambodży.  </em>
-
+    <p class="mx-auto my-9 mb-25 text-left lg:text-justify first-letter:text-8xl first-letter:float-left first-letter:mr-4 first-letter:mt-1 first-letter:font-serif first-letter:leading-[0.8] ">
+      Wioleta Literska jest certyfikowaną lingeristką, ukończyła Akademie Makijażu Permanentnego. Jurorka w Mistrzowstwach Art Beauty w powiększaniu ust. Jurorka i honorowy prelegent w Międzynarodowych Mistrzowastwach branży beauty KBC Awards w Kambodży. Perfekcyjnie podkreślone brwi, naturalnie zarysowane usta i subtelnie uniesiona kreską powieka to detale, które potrafią całkowicie odmienić sposób, w jaki kobieta patrzy na siebie w lustrze. Jako certyfikowana linergistka i absolwentka Akademii Permanent Makeup Trainer stale rozwija swoje umiejętności w zakresie makijażu permanentnego, pracując również w oparciu o autorską metodę modelowania ust Fresh Lips, stworzoną z myślą o naturalnym i eleganckim podkreśleniu kształtu ust.
+    </p>
+  </div>
+  <div class="mx-auto w-full">
     <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {categories.map((item) => (
         <a
@@ -55,8 +59,8 @@ const categories = [
           style={`background-image: url(${item.background.src});`}
           class="group relative flex h-100 items-center justify-center overflow-hidden rounded-sm border border-[#e5dfd0] bg-cover bg-center px-5 py-6 text-center text-sm font-medium uppercase tracking-[0.16em] text-white shadow-[0_10px_18px_-14px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:border-[#c1b599]"
         >
-          <span class="absolute inset-0 bg-black/35 transition-colors duration-300 group-hover:bg-black/45"></span>
-          <span class="relative z-10 transition-transform duration-300 group-hover:-translate-y-px">{item.label}</span>
+          <span class="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/35"></span>
+          <span class="font-notoDisplay text-2x1 relative z-10 transition-transform duration-300 group-hover:-translate-y-px">{item.label}</span>
         </a>
       ))}
     </div>

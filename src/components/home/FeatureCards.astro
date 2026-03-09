@@ -1,8 +1,8 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import image1 from '@assets/photo-1522071820081-009f0129c71c.jpg';
-import image2 from '@assets/photo-1518770660439-4636190af475.jpg';
-import image3 from '@assets/photo-1450101499163-c8848c66ca85.jpg';
+import image1 from '@assets/finansowanie.jpg';
+import image2 from '@assets/blog.jpg';
+import image3 from '@assets/oferta.jpg';
 
 // Generowanie zoptymalizowanych obrazów
 const image1Optimized = await getImage({ src: image1 });
@@ -51,7 +51,7 @@ const cards = [
           
           {/* Content */}
           <div class="absolute inset-0 flex flex-col items-center justify-center p-6 lg:p-8 text-center">
-            <h4 class="text-white group-hover:text-blue-200 transition-colors duration-300">
+            <h4 class="font-notoDisplay text-2x1 text-white group-hover:text-blue-200 transition-colors duration-300">
               {card.title}
             </h4>
           </div>
