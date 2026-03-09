@@ -14,7 +14,7 @@ const defaultHeading = "Piękno w Każdym Detalu";
 
 const {
   heading = defaultHeading,
-  subheading = "Profesjonalne usługi makijażu permanentnego & powiększania ust",
+  subheading = "Zaoszczędź czas przed lustrem i wyglądaj pięknie 24/7",
   circleHeading = "Naturalny Efekt",
   circleSubheading = "Podkreśl swoje piękno subtelnie i elegancko",
 } = Astro.props;
@@ -33,13 +33,13 @@ const useDefaultHeading = heading === defaultHeading;
   />
 
   <!-- Content -->
-  <div class="w-full px-8 relative z-10 pt-28 sm:pt-44 lg:pt-52 pb-12 sm:pb-16">
+  <div class="w-full px-8 relative z-10 pt-18 sm:pt-44 lg:pt-52 pb-12 sm:pb-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center ">
       <div class="text-left">
-        <h1 class="leading-tight text-white mb-4 sm:mb-6 drop-shadow-sm text-5xl md:text-5xl lg:text-7xl">
+        <h1 class="font-notoDisplay font-normal leading-tight uppercase text-white mb-4 sm:mb-6 drop-shadow-sm text-5xl md:text-5xl lg:text-5xl">
           {useDefaultHeading ? (
             <>
-              Piękno <span class="absolute left-[35%] top-[12%] md:left-[42%] md:top-[15%] lg:left-[53%] lg:top-[15%] -translate-x-1/2 -translate-y-1/2 text-[150px] md:text-[250px] lg:text-[376px] opacity-35 leading-none pointer-events-none italic text-white/60">w</span> <br />Każdym Detalu
+              Top permanent <br />makeup<span class="absolute left-[35%] top-[12%] md:left-[42%] md:top-[15%] lg:left-[53%] lg:top-[15%] -translate-x-1/2 -translate-y-1/2 text-[150px] md:text-[250px] lg:text-[306px] opacity-35 leading-none pointer-events-none italic text-white/60">&</span> <br />Powiększanie ust
             </>
           ) : (
             heading
@@ -65,7 +65,7 @@ const useDefaultHeading = heading === defaultHeading;
           <h4 class="font-notoDisplay text-white text-lg sm:text-2xl lg:text-3xl font-normal leading-tight mb-2 sm:mb-3 max-w-70">
             {circleHeading}
           </h4>
-          <p class="text-white/90 text-sm sm:text-base leading-relaxed max-w-65">
+          <p class="text-white text-sm sm:text-base leading-relaxed max-w-65">
             {circleSubheading}
           </p>
         </div>

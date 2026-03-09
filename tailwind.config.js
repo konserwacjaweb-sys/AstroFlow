@@ -12,6 +12,7 @@ export default {
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
+      gotham: ['Poppins', 'sans-serif'],
       heading: ['Playfair Display', 'serif'],
       playfair: ['Playfair Display', 'serif'],
       notoDisplay: ['Noto Serif Display', 'serif'],

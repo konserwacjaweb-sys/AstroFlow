@@ -1,45 +1,62 @@
 ---
+import bgMakijazPermanentny from '../../assets/bg-4.jpg';
+import bgPowiekszanieUst from '../../assets/1234.jpg';
+import bgCialo from '../../assets/0987.jpg';
+import bgMakijaz from '../../assets/galeria-bg.jpg';
+
 export interface Props {
   title?: string;
 }
 
-const { title = 'Wybierz Obszar Zabiegu' } = Astro.props;
+const { title = 'Najlepszy makijaż permanentny i powiększanie ust' } = Astro.props;
 
 const categories = [
   {
     label: 'Makijaz Permanentny',
     href: '/oferta',
+    background: bgMakijazPermanentny,
   },
   {
     label: 'Powiekszanie Ust',
     href: '/usta',
+    background: bgPowiekszanieUst,
   },
   {
     label: 'Cialo',
     href: '/oferta#cialo',
+    background: bgCialo,
   },
   {
     label: 'Makijaz',
     href: '/oferta#makijaz',
+    background: bgMakijaz,
   },
 ];
 ---
 
 <section class="px-6 py-14 sm:px-8 lg:px-12">
-  <div class="mx-auto w-full max-w-6xl">
-    <h1 class="text-center text-3xl font-light uppercase tracking-[0.14em] text-[#1f1f1f] sm:text-4xl">
+  <div class="mx-auto w-full max-w-6xl max-w-3xl">
+    <h1 class="font-poppins text-center tracking-[0.5em] text-md font-medium uppercase text-[#baa586]">
       {title}
     </h1>
 
-    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599]" />
+    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599] my-10" />
+
+    </p>
+    <p class="text-4xl leading-relaxed mt-4 font-poppins font-extralight">Wioleta Literska certyfikowana lingeristka w Kościerzynie, Master Permanent Make Up i Powiększania Ust.</p>
+
+    <p class="mx-auto my-9 first-letter:text-8xl first-letter:float-left first-letter:mr-4 first-letter:mt-1 first-letter:font-serif first-letter:leading-[0.8] ">
+      Wioleta Literska jest certyfikowaną lingeristką, ukończyła Akademie Makijażu Permanentnego. Jurorka w Mistrzowstwach Art Beauty w powiększaniu ust. Jurorka i honorowy prelegent w Międzynarodowych Mistrzowastwach branży beauty KBC Awards w Kambodży.  </em>
 
     <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {categories.map((item) => (
         <a
           href={item.href}
-          class="group flex min-h-28 items-center justify-center rounded-sm border border-[#e5dfd0] bg-white px-5 py-6 text-center text-sm font-medium uppercase tracking-[0.16em] text-[#1f1f1f] transition-colors duration-300 hover:border-[#c1b599] hover:bg-[#faf7f0]"
+          style={`background-image: url(${item.background.src});`}
+          class="group relative flex h-100 items-center justify-center overflow-hidden rounded-sm border border-[#e5dfd0] bg-cover bg-center px-5 py-6 text-center text-sm font-medium uppercase tracking-[0.16em] text-white shadow-[0_10px_18px_-14px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:border-[#c1b599]"
         >
-          <span class="transition-transform duration-300 group-hover:-translate-y-px">{item.label}</span>
+          <span class="absolute inset-0 bg-black/35 transition-colors duration-300 group-hover:bg-black/45"></span>
+          <span class="relative z-10 transition-transform duration-300 group-hover:-translate-y-px">{item.label}</span>
         </a>
       ))}
     </div>
