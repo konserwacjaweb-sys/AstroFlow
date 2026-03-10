@@ -20,11 +20,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   };
 
   return (
-    <div className="rounded-4xl py-10 flex flex-col items-center justify-center bg-[#3b5b63] w-full">
-      <div className="relative w-[70%] mx-auto p-6">
+    <div className="w-full">
+      <div className="mx-auto relative">
 
-        {/* Karuzela z białą ramką */}
-        <div className="relative w-full aspect-4/3 overflow-hidden border-20 border-white rounded-lg">
+        {/* Karuzela bez ramek */}
+        <div className="relative h-100 overflow-hidden">
           {images.map((image, index) => (
             <div
               key={index}

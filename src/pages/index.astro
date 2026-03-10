@@ -2,21 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/home/HeroSection.astro';
 import CategoryColumns from '../components/home/CategoryColumns.astro';
-import TwoColumns from '../components/home/TwoColumns.astro';
-import ServiceHighlights from '../components/home/ServiceHighlights.astro';
+import GalleryCarousel from '../components/home/GalleryCarousel.astro';
 import LogoCarousel from '../components/home/LogoCarousel.astro';
-import ImageGrid from '../components/home/ImageGrid.astro';
-import ContentSlider from '../components/home/ContentSlider.astro';
-import VoucherSection from '../components/home/VoucherSection.astro';
-import Testimonials from '../components/home/Testimonials.astro';
-import OfferShowcase from '../components/home/OfferShowcase.astro';
 import FeatureCards from '../components/home/FeatureCards.astro';
-import PremiumCTA from '../components/home/PremiumCTA.astro';
 ---
 
 <BaseLayout>
   <HeroSection />
   <LogoCarousel />
   <CategoryColumns />
+  <GalleryCarousel />
   <FeatureCards />
 </BaseLayout>

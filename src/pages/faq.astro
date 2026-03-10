@@ -1,8 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Section from '@components/ui/Section.astro';
-import Card from '@components/ui/Card.astro';
-import ImageReveal from '@components/react/ImageReveal';
 import { Image } from 'astro:assets';
 
 import heroBgImg from '@assets/photo-1454165804606-c3d57bc86b40.jpg';
@@ -71,9 +68,9 @@ const faqs = [
   </section>
 
   <!-- Search Bar -->
-  <Section background="gray">
+  <section background="gray">
     <div class="max-w-4xl mx-auto mb-16">
-      <Card class="p-6 shadow-xl border-2 border-gray-100">
+      <div class="p-6 shadow-xl border-2 border-gray-100">
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex-1 relative">
             <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,12 +89,12 @@ const faqs = [
             Search
           </button>
         </div>
-      </Card>
+      </div>
     </div>
-  </Section>
+  </section>
 
   <!-- FAQ Section -->
-  <Section background="white">
+  <section background="white">
     <div class="text-center mb-16">
       <h2 class="text-gray-900 mb-4">
         Popular Questions
@@ -109,8 +106,8 @@ const faqs = [
 
     <div class="max-w-4xl mx-auto space-y-4">
       {faqs.map((faq, index) => (
-        <ImageReveal client:load delay={index * 0.05}>
-          <Card hover class="border-2 border-gray-100 hover:border-blue-200 transition-colors">
+        
+          <div hover class="border-2 border-gray-100 hover:border-blue-200 transition-colors">
             <details class="group">
               <summary class="flex items-center justify-between cursor-pointer list-none py-2 group-open:mb-2 [&::-webkit-details-marker]:hidden">
                 <h3 class="text-gray-900 pr-4 group-hover:text-blue-600 transition-colors">
@@ -126,14 +123,14 @@ const faqs = [
                 <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             </details>
-          </Card>
-        </ImageReveal>
+          </div>
+        
       ))}
     </div>
-  </Section>
+  </section>
 
   <!-- Help Section -->
-  <Section background="gradient">
+  <section background="gradient">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-gray-900 mb-4">
@@ -145,8 +142,8 @@ const faqs = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <ImageReveal client:load delay={0}>
-          <Card hover class="text-center h-full">
+        
+          <div hover class="text-center h-full">
             <div class="w-20 h-20 bg-linear-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -162,11 +159,11 @@ const faqs = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
-          </Card>
-        </ImageReveal>
+          </div>
+        
 
-        <ImageReveal client:load delay={0.1}>
-          <Card hover class="text-center h-full">
+        
+          <div hover class="text-center h-full">
             <div class="w-20 h-20 bg-linear-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -182,11 +179,11 @@ const faqs = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
-          </Card>
-        </ImageReveal>
+          </div>
+        
 
-        <ImageReveal client:load delay={0.2}>
-          <Card hover class="text-center h-full">
+        
+          <div hover class="text-center h-full">
             <div class="w-20 h-20 bg-linear-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -202,10 +199,10 @@ const faqs = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
-          </Card>
-        </ImageReveal>
+          </div>
+        
       </div>
     </div>
-  </Section>
+  </section>
 </BaseLayout>
 

@@ -1,8 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Section from '@components/ui/Section.astro';
-import Card from '@components/ui/Card.astro';
-import RFQForm from '@components/react/RFQForm';
 import { Image } from 'astro:assets';
 import { FileText, Clock, Shield, CheckCircle2, Phone, Mail, MessageCircle, Award, TrendingUp, Users } from 'lucide-react';
 import rfqBgImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
@@ -72,19 +69,34 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
   </section>
 
   <!-- Main Form Section -->
-  <Section background="gray">
+  <section background="gray">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <!-- Form -->
       <div class="lg:col-span-2">
-        <Card>
-          <RFQForm client:load />
-        </Card>
+        <div>
+          <form class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 space-y-5" id="rfq-form">
+            <h2 class="text-gray-900">Skontaktuj się z nami</h2>
+            <p class="text-gray-600">Wypełnij formularz, a odpowiemy możliwie najszybciej.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="text" name="name" placeholder="Imię i nazwisko" class="w-full rounded-lg border border-gray-300 px-4 py-3" />
+              <input type="email" name="email" placeholder="E-mail" class="w-full rounded-lg border border-gray-300 px-4 py-3" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="tel" name="phone" placeholder="Telefon" class="w-full rounded-lg border border-gray-300 px-4 py-3" />
+              <input type="text" name="company" placeholder="Firma (opcjonalnie)" class="w-full rounded-lg border border-gray-300 px-4 py-3" />
+            </div>
+            <textarea name="message" rows="6" placeholder="Opisz czego potrzebujesz" class="w-full rounded-lg border border-gray-300 px-4 py-3"></textarea>
+            <button type="submit" class="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
+              Wyślij zapytanie
+            </button>
+          </form>
+        </div>
       </div>
 
       <!-- Sidebar -->
       <div class="space-y-6">
         <!-- Contact Info Card -->
-        <Card class="bg-linear-to-br from-blue-50 to-teal-50 border-blue-200">
+        <div class="bg-linear-to-br from-blue-50 to-teal-50 border-blue-200">
           <div class="flex items-center mb-4">
             <div class="w-10 h-10 rounded-lg bg-linear-to-br from-blue-600 to-teal-600 flex items-center justify-center mr-3">
               <Phone className="w-5 h-5 text-white" />
@@ -125,10 +137,10 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
               </div>
             </div>
           </div>
-        </Card>
+        </div>
 
         <!-- What to Expect Card -->
-        <Card class="bg-linear-to-br from-primary-50 via-blue-50 to-secondary-50 border-primary-200">
+        <div class="bg-linear-to-br from-primary-50 via-blue-50 to-secondary-50 border-primary-200">
           <div class="flex items-center mb-4">
             <div class="w-10 h-10 rounded-lg bg-linear-to-br from-primary-600 to-blue-600 flex items-center justify-center mr-3">
               <Clock className="w-5 h-5 text-white" />
@@ -165,10 +177,10 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
               </div>
             </li>
           </ol>
-        </Card>
+        </div>
 
         <!-- Trust Indicators -->
-        <Card class="bg-linear-to-br from-slate-50 to-gray-50 border-slate-200">
+        <div class="bg-linear-to-br from-slate-50 to-gray-50 border-slate-200">
           <div class="flex items-center mb-4">
             <div class="w-10 h-10 rounded-lg bg-linear-to-br from-green-600 to-emerald-600 flex items-center justify-center mr-3">
               <Award className="w-5 h-5 text-white" />
@@ -201,13 +213,13 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
               <span class="text-gray-700 pt-1">24/7 customer support</span>
             </li>
           </ul>
-        </Card>
+        </div>
       </div>
     </div>
-  </Section>
+  </section>
 
   <!-- Trust & Success Section -->
-  <Section background="white">
+  <section background="white">
     <div class="text-center mb-12">
       <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
         Trusted by Industry Leaders
@@ -222,7 +234,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <!-- Feature 1 -->
-      <Card class="text-center hover:shadow-xl transition-all duration-300">
+      <div class="text-center hover:shadow-xl transition-all duration-300">
         <div class="w-16 h-16 rounded-full bg-linear-to-br from-blue-600 to-teal-600 flex items-center justify-center mx-auto mb-4">
           <Shield className="w-8 h-8 text-white" />
         </div>
@@ -230,10 +242,10 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         <p class="text-gray-600">
           Enterprise-grade security and 99.9% uptime guarantee for your peace of mind.
         </p>
-      </Card>
+      </div>
 
       <!-- Feature 2 -->
-      <Card class="text-center hover:shadow-xl transition-all duration-300">
+      <div class="text-center hover:shadow-xl transition-all duration-300">
         <div class="w-16 h-16 rounded-full bg-linear-to-br from-green-600 to-emerald-600 flex items-center justify-center mx-auto mb-4">
           <TrendingUp className="w-8 h-8 text-white" />
         </div>
@@ -241,10 +253,10 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         <p class="text-gray-600">
           Grow your business with solutions that scale from startup to enterprise level.
         </p>
-      </Card>
+      </div>
 
       <!-- Feature 3 -->
-      <Card class="text-center hover:shadow-xl transition-all duration-300">
+      <div class="text-center hover:shadow-xl transition-all duration-300">
         <div class="w-16 h-16 rounded-full bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center mx-auto mb-4">
           <Users className="w-8 h-8 text-white" />
         </div>
@@ -252,7 +264,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         <p class="text-gray-600">
           Dedicated account managers and 24/7 support to help you succeed.
         </p>
-      </Card>
+      </div>
     </div>
 
     <!-- Visual Showcase -->
@@ -285,6 +297,6 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         </a>
       </div>
     </div>
-  </Section>
+  </section>
 </BaseLayout>
 

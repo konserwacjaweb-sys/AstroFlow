@@ -1,10 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Section from '@components/ui/Section.astro';
-import Button from '@components/ui/Button.astro';
-import TestimonialCard from '@components/ui/TestimonialCard.astro';
-import UseCaseTabs from '@components/react/UseCaseTabs';
-import StatsCards from '@components/react/StatsCards';
 import { Image } from 'astro:assets';
 
 import ecommerceImg from '@assets/photo-1607082349566-187342175e2f.jpg';
@@ -167,12 +162,39 @@ const testimonials:any[] = [
   </section>
 
   <!-- Galeria with Tabs -->
-  <Section background="gray">
-    <UseCaseTabs useCases={useCases} client:load />
-  </Section>
+  <section background="gray">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {useCases.map((useCase) => (
+        <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-56">
+            <Image
+              src={useCase.image}
+              alt={useCase.industry}
+              class="w-full h-full object-cover"
+              width={1200}
+              height={700}
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-900 mb-3">{useCase.industry}</h3>
+            <p class="text-gray-600 mb-3"><strong>Challenge:</strong> {useCase.challenge}</p>
+            <p class="text-gray-600 mb-4"><strong>Solution:</strong> {useCase.solution}</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              {useCase.results.map((item) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-green-600 mt-1">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
 
   <!-- Success Metrics -->
-  <Section background="white">
+  <section background="white">
     <div class="text-center mb-16">
       <h2 class="text-gray-900 mb-4">
         Proven <span class="gradient-text">Results</span>
@@ -182,19 +204,23 @@ const testimonials:any[] = [
       </p>
     </div>
 
-    <StatsCards 
-      stats={[
-        { value: '99.8%', label: 'On-Time Delivery', iconName: 'CheckCircle2' },
-        { value: '45%', label: 'Average Cost Savings', iconName: 'TrendingDown' },
-        { value: '500+', label: 'Satisfied Clients', iconName: 'Users' },
-        { value: '50M+', label: 'Units Shipped', iconName: 'Package' }
-      ]}
-      client:load 
-    />
-  </Section>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {[
+        { value: '99.8%', label: 'On-Time Delivery' },
+        { value: '45%', label: 'Average Cost Savings' },
+        { value: '500+', label: 'Satisfied Clients' },
+        { value: '50M+', label: 'Units Shipped' }
+      ].map((stat) => (
+        <div class="bg-white rounded-xl shadow p-5 text-center">
+          <p class="text-3xl font-bold text-primary-800">{stat.value}</p>
+          <p class="text-sm text-gray-600">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
   <!-- Testimonials Section -->
-  <Section background="gray">
+  <section background="gray">
     <div class="text-center mb-16">
       <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
         Client Success Stories
@@ -209,10 +235,25 @@ const testimonials:any[] = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {testimonials.map((testimonial) => (
-        <TestimonialCard testimonial={testimonial} />
+        <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+          <p class="text-gray-700 leading-relaxed mb-6">"{testimonial.quote}"</p>
+          <div class="flex items-center gap-3">
+            <Image
+              src={testimonial.image}
+              alt={testimonial.name}
+              class={`w-12 h-12 rounded-full object-cover ring-2 ${testimonial.ringColor}`}
+              width={96}
+              height={96}
+            />
+            <div>
+              <p class="font-semibold text-gray-900">{testimonial.name}</p>
+              <p class="text-sm text-gray-600">{testimonial.role}</p>
+            </div>
+          </div>
+        </article>
       ))}
     </div>
-  </Section>
+  </section>
 
   <!-- CTA Section -->
   <section class="relative py-32 overflow-hidden">
@@ -242,12 +283,12 @@ const testimonials:any[] = [
         </p>
         
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button href="/kontakt" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+          <a href="/kontakt" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
             Kontakt
-          </Button>
-          <Button href="/oferta" size="lg" variant="outline" class="border-2! border-navyblue-800! text-white! hover:bg-white/10! shadow-2xl!">
+          </a>
+          <a href="/oferta" size="lg" variant="outline" class="border-2! border-navyblue-800! text-white! hover:bg-white/10! shadow-2xl!">
             Zobacz ofertę
-          </Button>
+          </a>
         </div>
       </div>
     </div>

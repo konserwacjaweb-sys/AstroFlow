@@ -34,7 +34,7 @@ const cards = [
       {cards.map((card) => (
         <a 
           href={card.href}
-          class="group relative h-64 lg:h-72 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+          class="group relative font-notoDisplay text-2xl uppercase h-64 lg:h-72 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
         >
           {/* Background Image */}
           <div
@@ -51,7 +51,7 @@ const cards = [
           
           {/* Content */}
           <div class="absolute inset-0 flex flex-col items-center justify-center p-6 lg:p-8 text-center">
-            <h4 class="font-notoDisplay text-2x1 text-white group-hover:text-blue-200 transition-colors duration-300">
+            <h4 class=" text-white group-hover:text-blue-200 transition-colors duration-300">
               {card.title}
             </h4>
           </div>

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/ui/Section.astro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faClock, faShieldHalved, faFileContract, faHeartPulse, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 ---
@@ -8,7 +7,7 @@ import { faCircleInfo, faClock, faShieldHalved, faFileContract, faHeartPulse, fa
 <BaseLayout>
   <main>
     <!-- Hero Section -->
-    <Section class="bg-linear-to-br from-primary-100 to-primary-200 py-20">
+    <section class="bg-linear-to-br from-primary-100 to-primary-200 py-20">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-4xl mx-auto">
           <div class="inline-flex items-center gap-3 mb-6">
@@ -22,10 +21,10 @@ import { faCircleInfo, faClock, faShieldHalved, faFileContract, faHeartPulse, fa
           </p>
         </div>
       </div>
-    </Section>
+    </section>
 
     <!-- Informacje Section -->
-    <Section class="py-16">
+    <section class="py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-8 mb-16">
           <!-- Przed zabiegiem -->
@@ -198,6 +197,6 @@ import { faCircleInfo, faClock, faShieldHalved, faFileContract, faHeartPulse, fa
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   </main>
 </BaseLayout>

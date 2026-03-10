@@ -2,11 +2,17 @@
 import { Image } from 'astro:assets';
 import ImageCarousel from '@components/react/ImageCarousel';
 import warehouseImg from '@assets/galeria-bg.jpg';
-import carouselImgOne from '@assets/3.jpg';
-import carouselImgTwo from '@assets/5.jpg';
-import carouselImgThree from '@assets/15.jpg';
-import carouselImgFour from '@assets/makijaz_permanentny_koscierzyna_beauty.jpg';
-import carouselImgFive from '@assets/powiekszanie_ust_koscierzyna_beauty.jpg';
+import carouselImgOne from '@assets/67.jpg';
+import carouselImgTwo from '@assets/body.jpg';
+import carouselImgThree from '@assets/makeup-wiktoria-2.jpg';
+import carouselImgFour from '@assets/brow-mp.png';
+import carouselImgFive from '@assets/powiekszanie-ust.jpeg';
+
+export interface Props {
+  title?: string;
+}
+
+const { title = 'Konsultacje w zakresie makijazu permanentnego i modelowania ust w Koscierzynie i Wejherowie' } = Astro.props;
 
 const carouselImages = [
   {
@@ -38,33 +44,28 @@ const carouselImages = [
 ---
 
  <!-- Nowa sekcja -->
-<section class="container mx-auto">
-  <div class="py-32 px-4 sm:px-6 lg:px-5">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-      <!-- Pierwsza kolumna: Obraz z tekstem -->
-      <div class="rounded-4xl">
-        <div class="relative h-full min-h-100 lg:min-h-125">
-          <Image
-            src={warehouseImg}
-            alt="Automated warehouse with modern robotics"
-            class="h-full w-full object-cover rounded-4xl"
-            width={1000}
-            height={600}
-            decoding="async"
-          />
-          <div class="absolute bottom-0 left-0 right-0 p-8 text-white rounded-b-4xl">
-            <span class="text-sm uppercase tracking-wide ">
-              Galeria
-            </span>
-            <h2 class="mb-2 py-3">Beauty for <span class="border-1 border-white rounded-[20px] px-3 py-1">You</span></h2>
-          </div>
-        </div>
-      </div>
+<section class="container">
+  <div class="mx-auto w-full max-w-5xl">
+    <h2 class="font-poppins text-center tracking-[0.5em] text-md font-medium uppercase text-[#baa586]">
+      {title}
+    </h2>
+
+    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599] my-10" />
+
+    <p class="text-4xl text-center leading-relaxed mt-4 font-poppins font-extralight">
+     Konsultacje z Wioletą Literską
+      <span class="italic">w Kościerzynie i Wejherowie.</span>
+    </p>
+
+    <p class="mx-auto my-9 mb-25 text-left lg:text-justify first-letter:text-8xl first-letter:float-left first-letter:mr-4 first-letter:mt-1 first-letter:font-serif first-letter:leading-[0.8] ">
+      Nie mogę się doczekać, aby poznać Cię osobiście! Podczas konsultacji opowiem o możliwościach makijażu permanentnego oraz modelowania ust i wspólnie dobierzemy rozwiązanie, które najlepiej podkreśli Twoją naturalną urodę. Zarezerwuj dogodny termin wizyty i pozwól mi zadbać o Twój wygląd oraz komfort.
+    </p>
+  </div>
+    <div class="mx-auto w-full max-w-5xl items-center">
     
       <!-- Druga kolumna: Karuzela -->
       <ImageCarousel images={carouselImages} client:visible />
     </div>
     
-  </div>
 </section>
 
