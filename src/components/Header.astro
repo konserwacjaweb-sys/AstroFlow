@@ -1,7 +1,8 @@
 ---
 import { NAVIGATION } from '@config/site';
 import { Image } from 'astro:assets';
-import whiteCircleLogo from '../assets/baa586-circle.png';
+import whiteCircleLogo from '../assets/white-circle-logo.png';
+import unifiedLogo from '../assets/logo_jednolite.png';
 
 import MobileMenu from '@components/react/MobileMenu';
 import TopInfoBar from '@components/home/TopInfoBar.astro';
@@ -12,20 +13,31 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 ---
 
 <!-- Nav - nałożona na premium-hero -->
-<header class="group absolute top-0 left-0 right-0 z-50 w-full px-8 transition-all duration-300 shadow-none data-[sticky=true]:fixed data-[sticky=true]:top-0 data-[sticky=true]:left-0 data-[sticky=true]:right-0 data-[sticky=true]:bg-black/30 data-[sticky=true]:backdrop-blur-[20px] data-[sticky=true]:shadow-[0_3px_12px_rgba(0,0,0,0.05)]"
+<header class="group absolute top-0 left-0 right-0 z-50 w-full px-8 transition-all duration-300 shadow-none data-[sticky=true]:fixed data-[sticky=true]:top-0 data-[sticky=true]:left-0 data-[sticky=true]:right-0 data-[sticky=true]:bg-white/30 data-[sticky=true]:backdrop-blur-[20px] data-[sticky=true]:shadow-[0_3px_12px_rgba(0,0,0,0.05)]"
   data-site-header data-sticky="false">
   <div class="w-full transition-[min-height] duration-300 group-data-[sticky=true]:min-h-18 lg:grid lg:grid-cols-[1fr_3fr_1fr] lg:items-center lg:gap-2">
     <div class="flex items-center justify-between py-3 lg:hidden">
       <a href="/" class="items-center">
-        <Image
-          src={whiteCircleLogo}
-          alt="Wioleta Literska Logo"
-          class="object-contain h-15 w-auto sm:w-40 sm:h-22.5 md:w-48.5 md:h-27.5 lg:w-48.5 lg:h-27.5 transition-[width,height] duration-300 group-data-[sticky=true]:w-30.75 group-data-[sticky=true]:h-17.5"
-          width="176"
-          height="100"
-          loading="eager"
-          quality="high"
-        />
+        <div class="relative h-15 w-26 sm:h-22.5 sm:w-40 md:h-27.5 md:w-48.5 transition-[width,height] duration-300 group-data-[sticky=true]:h-17.5 group-data-[sticky=true]:w-30.75">
+          <Image
+            src={whiteCircleLogo}
+            alt="Wioleta Literska Logo"
+            class="absolute inset-0 h-full w-full object-contain opacity-100 transition-opacity duration-300 group-data-[sticky=true]:opacity-0"
+            width="176"
+            height="100"
+            loading="eager"
+            quality="high"
+          />
+          <Image
+            src={unifiedLogo}
+            alt="Wioleta Literska Logo"
+            class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-300 group-data-[sticky=true]:opacity-100"
+            width="176"
+            height="100"
+            loading="eager"
+            quality="high"
+          />
+        </div>
       </a>
 
       <div class="ml-auto">
@@ -35,24 +47,35 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
 
     <div class="hidden lg:flex min-w-0 items-center justify-start py-2 lg:col-start-1">
       <a href="/" class="flex w-full max-w-48.5 items-center group">
-        <Image
-          src={whiteCircleLogo}
-          alt="Wioleta Literska Logo"
-          class="object-contain w-full h-auto transition-[width,height] duration-300 group-data-[sticky=true]:w-30.75"
-          width="176"
-          height="100"
-          loading="eager"
-          quality="high"
-        />
+        <div class="relative w-full transition-[width,height] duration-300 group-data-[sticky=true]:w-30.75">
+          <Image
+            src={whiteCircleLogo}
+            alt="Wioleta Literska Logo"
+            class="h-auto w-full object-contain opacity-100 transition-opacity duration-300 group-data-[sticky=true]:opacity-0"
+            width="176"
+            height="100"
+            loading="eager"
+            quality="high"
+          />
+          <Image
+            src={unifiedLogo}
+            alt="Wioleta Literska Logo"
+            class="absolute inset-0 h-auto w-full object-contain opacity-0 transition-opacity duration-300 group-data-[sticky=true]:opacity-100"
+            width="176"
+            height="100"
+            loading="eager"
+            quality="high"
+          />
+        </div>
       </a>
     </div>
 
-    <nav class="hidden lg:flex min-w-0 items-center justify-center gap-2 xl:gap-3 py-2 relative after:content-[''] after:absolute after:right-0 after:top-px after:bg-white after:block after:h-11 after:w-px after:rotate-28 lg:col-start-2" aria-label="Główna nawigacja">
+    <nav class="hidden lg:flex min-w-0 items-center justify-center gap-2 xl:gap-3 py-2 relative after:content-[''] after:absolute after:right-0 after:top-px after:bg-white after:block after:h-11 after:w-px after:rotate-28 group-data-[sticky=true]:after:bg-slate-300 lg:col-start-2" aria-label="Główna nawigacja">
       <div class="flex items-center lg:space-x-0.5 xl:space-x-1">
         {NAVIGATION.map((item) => {
           const isActive = isActiveLink(item.href);
           return (
-            <a href={item.href} class={`mx-1 xl:mx-2 px-2.5 xl:px-4 py-2 text-[0.95rem] xl:text-[1rem] font-normal text-white hover:text-[#999173] transition-all relative group group-data-[sticky=true]:text-white group-data-[sticky=true]:hover:text-[#aac3c9] group-data-[sticky=true]:hover:bg-[#3b5b63] ${isActive ? 'text-[#999173]' : ''}`} > {item.name} </a>
+            <a href={item.href} class={`mx-1 xl:mx-2 px-2.5 xl:px-4 py-2 text-[0.95rem] xl:text-[1rem] font-normal text-white hover:text-[#999173] transition-all relative group group-data-[sticky=true]:text-slate-900 group-data-[sticky=true]:hover:text-slate-900 group-data-[sticky=true]:hover:bg-slate-100 ${isActive ? 'text-[#999173] group-data-[sticky=true]:text-slate-900' : ''}`} > {item.name} </a>
           );
         })}
       </div>

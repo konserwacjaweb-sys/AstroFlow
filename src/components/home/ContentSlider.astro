@@ -1,0 +1,47 @@
+---
+import { getImage } from 'astro:assets';
+import SliderControls from '../react/SliderControls.tsx';
+import makijazImg from '@assets/wioleta-literska.jpg';
+import ustaImg from '@assets/wiktoria-literska.jpg';
+
+const makijazOptimized = await getImage({ src: makijazImg });
+const ustaOptimized = await getImage({ src: ustaImg });
+
+const slides = [
+  {
+    id: 1,
+    title: 'Wioleta Literska',
+    description:
+      'Profesjonalny makijaz permanentny brwi metoda pudrowa. Naturalny efekt na lata i precyzyjne dopasowanie do rysow twarzy.',
+    imageSrc: makijazOptimized.src,
+    imageAlt: 'Makijaz permanentny brwi'
+  },
+  {
+    id: 2,
+    title: 'Wiktoria Literska',
+    description:
+      'Modelowanie i powiekszanie ust kwasem hialuronowym. Naturalne rezultaty dopasowane do Twoich proporcji i oczekiwan.',
+    imageSrc: ustaOptimized.src,
+    imageAlt: 'Powiekszanie ust'
+  }
+];
+---
+
+<section class="bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-8 lg:px-12">
+  <div class="mx-auto w-full max-w-5xl mb-10">
+    <h2 class="font-poppins text-center tracking-[0.5em] text-md font-medium uppercase text-[#baa586]">
+     Kościerzyna & Wejherowo
+    </h2>
+
+    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599] my-10" />
+
+    <p class="text-6xl leading-relaxed mt-4 font-notoDisplay font-extralight text-center ">
+      Poznaj
+      <span class="italic">Nas</span>
+    </p>
+  </div>
+    <div class="w-full">
+      <SliderControls slides={slides} client:load />
+    </div>
+  </div>
+</section>

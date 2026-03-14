@@ -1,0 +1,100 @@
+---
+import type { ImageMetadata } from 'astro';
+import SliderControls from '../react/SliderControls.tsx';
+import imageBg from '@assets/baa586bg.jpg';
+import makeup1 from '@assets/makeup-wiktoria.jpg';
+import makeup2 from '@assets/makeup-wiktoria-2.jpg';
+import medspa from '@assets/medspa.jpg';
+
+interface SlideItem {
+  src: ImageMetadata;
+  alt: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  slides?: SlideItem[];
+}
+
+const { slides: inputSlides } = Astro.props as Props;
+
+const defaultSlides: SlideItem[] = [
+  {
+    src: makeup1,
+    alt: 'Makijaz permanentny brwi',
+    title: 'Makijaz permanentny brwi',
+    description: 'Naturalny efekt dopasowany do rysow twarzy.'
+  },
+  {
+    src: makeup2,
+    alt: 'Makijaz permanentny ust',
+    title: 'Makijaz permanentny ust',
+    description: 'Delikatne podkreslenie koloru i konturu ust.'
+  },
+  {
+    src: medspa,
+    alt: 'Strefa beauty',
+    title: 'Strefa beauty',
+    description: 'Komfortowa przestrzen zabiegowa i profesjonalna opieka.'
+  }
+];
+
+const slides = inputSlides && inputSlides.length > 0 ? inputSlides : defaultSlides;
+
+const sliderSlides = slides.map((slide, index) => ({
+  id: index + 1,
+  title: slide.title,
+  description: slide.description,
+  imageSrc: slide.src.src,
+  imageAlt: slide.alt
+}));
+---
+
+<section
+  id="gallery-content-slider"
+  class="relative z-10 mt-12 bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-8 lg:px-12"
+  style={`background-image: url(${imageBg.src});`}>
+  <div class="mx-auto w-full max-w-5xl mb-10">
+    <h2 class="font-poppins text-center tracking-[0.5em] text-md font-medium uppercase text-[#baa586]">
+     Konsultacje w zakresie makijazu permanentnego i modelowania ust w Koscierzynie i Wejherowie.
+    </h2>
+
+    <hr class="mx-auto mt-6 h-px w-full max-w-3xl border-0 bg-[#c1b599] my-10" />
+
+    <p class="text-4xl leading-relaxed mt-4 font-poppins font-extralight text-center ">
+      Konsultacje z
+      <span class="italic">Wioletą Literską.</span>
+    </p>
+
+  </div>
+  <div class="mx-auto w-full max-w-5xl">
+    <SliderControls
+      slides={sliderSlides}
+      showContentColumn={false}
+      showImageCaption={false}
+      client:load
+    />
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+      <a
+        href="/makijaz-permanentny-koscierzyna"
+        class="inline-flex w-[18rem] max-w-full items-center justify-center rounded-sm border-2 border-[#999173] bg-[#999173] px-3 py-3 text-center text-xs font-normal uppercase tracking-wide text-white transition-colors hover:bg-[#999173]/90 sm:text-sm"
+      >
+        Makijaz permanentny
+      </a>
+      <a
+        href="/powiekszanie-ust-koscierzyna"
+        class="inline-flex w-[18rem] max-w-full items-center justify-center rounded-sm border-2 border-[#999173] bg-[#999173] px-3 py-3 text-center text-xs font-normal uppercase tracking-wide text-white transition-colors hover:bg-[#999173]/90 sm:text-sm"
+      >
+        Powiekszanie ust
+      </a>
+      <a
+        href="/makijaz-okolicznosciowy-koscierzyna"
+        class="inline-flex w-[18rem] max-w-full items-center justify-center rounded-sm border-2 border-[#999173] bg-[#999173] px-3 py-3 text-center text-xs font-normal uppercase tracking-wide text-white transition-colors hover:bg-[#999173]/90 sm:text-sm"
+      >
+        Makijaz okolicznosciowy
+      </a>
+    </div>
+  </div>
+</section>

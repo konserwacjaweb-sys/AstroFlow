@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/home/HeroSection.astro';
-import CategoryColumns from '../components/home/CategoryColumns.astro';
-import GalleryCarousel from '../components/home/GalleryCarousel.astro';
 import LogoCarousel from '../components/home/LogoCarousel.astro';
+import CategoryColumns from '../components/home/CategoryColumns.astro';
+import GalleryContentSlider from '../components/home/GalleryContentSlider.astro';
+import ContentSlider from '../components/home/ContentSlider.astro';
 import FeatureCards from '../components/home/FeatureCards.astro';
 ---
 
@@ -11,6 +12,7 @@ import FeatureCards from '../components/home/FeatureCards.astro';
   <HeroSection />
   <LogoCarousel />
   <CategoryColumns />
-  <GalleryCarousel />
+  <ContentSlider />
+  <GalleryContentSlider />
   <FeatureCards />
 </BaseLayout>

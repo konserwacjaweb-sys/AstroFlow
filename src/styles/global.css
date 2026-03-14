@@ -150,6 +150,16 @@ html {
   animation: slideInRight 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Keep pointer cursor consistent across slider/carousel interactive elements */
+[data-slider] button,
+[data-slider] a,
+[data-slider] [role='button'],
+[data-carousel] button,
+[data-carousel] a,
+[data-carousel] [role='button'] {
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-slide-in-left,
   .animate-slide-in-right,
